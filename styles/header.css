@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "worksans";
+    src: url("worksans.woff") format("woff"), url("worksans.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    position: relative;
+}
+
+#secondnav
+{
+    text-align: center;
+    font-family: worksans;
+    margin-top: 4vw;
+    font-size: 1.5vw;
+}
+
+.innernav
+{
+    float: left;
+    width: 33.33%;
+}
+
+.innernav a
+{
+    color: #FFC700;
+}
+
+header
+{
+    background-image: url("../imgs/fbackground.png");
+    background-size: cover;
+    height: 25vw;
+    box-shadow: 0 0 30px 2px #808080;
+    position: relative;
+}
+
+#leftback
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+
+#rightback
+{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+
+header h1
+{
+    text-align: center;
+    line-height: 25vw;
+    font-size: 3.8vw;
+    font-family: worksans;
+    z-index: 1;
+    position: relative;
+}
+
+header div div
+{
+    position: absolute;
+    right: 24vw;
+    bottom: 8.5vw;
+    font-family: worksans;
+    font-size: 1.4vw;
+    z-index: 1;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+a::after
+{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 50%;
+    height: 0.2vw;
+    background-color: transparent;
+    width: 0px;
+}
+
+#leftnav
+{
+    display: inline-block;
+    margin-right: 0.4vw;
+}
+
+#leftnav a::after
+{
+    transition: width .3s ease, background-color .3s ease, right .3s ease;
+}
+
+#leftnav a:hover::after
+{
+    width: 100%;
+    right: 0;
+    background-color: #FFFFFF;
+}
+
+#rightnav
+{
+    display: inline-block;
+    line-height: 5vw;
+    margin-left: 0.4vw;
+}
+
+#rightnav a::after
+{
+    transition: width .3s ease, background-color .3s ease, right .3s ease;
+}
+
+#rightnav a:hover::after
+{
+    width: 100%;
+    right: 0;
+    background-color: #FFFFFF;
+}
+
+nav
+{
+    position: absolute;
+    left: 2vw;
+    top: 2vw;
+    background-color: #FAF1B9;
+    padding: 0px 20px 0px 20px;
+    border-radius: 40px;
+    height: 5vw;
+    font-size: 1.4vw;
+    font-family: worksans;
+    box-shadow: 0 0 4px 1px #808080;
+    z-index: 1;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1280px){
+    nav
+    {
+        font-size: 2vw;
+    }
+
+    header h1
+    {
+        font-size: 5vw;
+    }
+
+    header div div
+    {
+        right: 20vw;
+        bottom: 7.5vw;
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (min-width: 430px) and (max-width: 699px)
+{
+    nav
+    {
+        font-size: 3vw;
+    }
+
+    a::after
+    {
+        height: 0.3vw;
+    }
+
+    header
+    {
+        height: 30vw;
+    }
+
+    header h1
+    {
+        font-size: 7vw;
+        line-height: 30vw;
+    }
+
+    header div div
+    {
+        font-size: 3vw;
+        bottom: 6vw;
+        right: 12vw;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    nav
+    {
+        font-size: 3.5vw;
+    }
+
+    a::after
+    {
+        height: 0.3vw;
+    }
+
+    header
+    {
+        height: 35vw;
+    }
+
+    header h1
+    {
+        font-size: 8vw;
+        line-height: 35vw;
+    }
+
+    header div div
+    {
+        font-size: 4vw;
+        bottom: 7vw;
+        right: 6vw;
+    }
+}

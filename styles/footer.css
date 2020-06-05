@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+footer
+{
+    background-image: url("../imgs/fbackground.png");
+    background-size: cover;
+    box-shadow: 0 0 30px 2px #808080;
+    margin-top: 5vw;
+    height: 10vw;
+    padding: 1vw 0px 1vw 0px;
+    font-family: worksans;
+}
+
+#copyright
+{
+    position: absolute;
+    text-align: center;
+    bottom: 1vw;
+    width: 75%;
+    left: 12.5%;
+    font-weight: normal;
+}
+
+#rightarrow
+{
+    display: none;
+}
+
+#leftarrow
+{
+    display: none;
+}
+
+footer ul
+{
+    list-style: none;
+    padding: 0px;
+}
+
+footer a
+{
+    color: grey;
+}
+
+footer a:hover
+{
+    color: lightgrey;
+}
+
+footer h4
+{
+    font-size: 1.4vw;
+}
+
+.aligner
+{
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+.aligned
+{
+    display: inline-block;
+    text-align: left;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1280px){
+    footer
+    {
+        height: 20vw;
+    }
+
+    footer h4
+    {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 430px) and (max-width: 699px)
+{
+    footer
+    {
+        height: 35vw;
+        margin-top: 10vw;
+        padding-top: 2vw;
+    }
+
+    footer h4
+    {
+        font-size: 4vw;
+    }
+
+    .aligner
+    {
+        margin-left: 1.5vw;
+        width: 50%;
+    }
+
+    #aligner1
+    {
+        left: 25%;
+    }
+
+    #aligner2
+    {
+        left: 125%;
+    }
+
+    #aligner3
+    {
+        left: 225%;
+    }
+
+    footer li
+    {
+        margin-top: 1vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 699px)
+{
+    footer
+    {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .aligner
+    {
+        position: absolute;
+        transition: left .3s ease;
+    }
+
+    body
+    {
+        width: 100%;
+    }
+
+    #rightarrow
+    {
+        display: block;
+        position: absolute;
+        right: 10%;
+        width: 10%;
+        bottom: 45%;
+    }
+
+    #leftarrow
+    {
+        display: none;
+        position: absolute;
+        left: 10%;
+        width: 10%;
+        bottom: 45%;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    footer
+    {
+        height: 35vw;
+        margin-top: 10vw;
+        padding-top: 2vw;
+    }
+
+    footer h4
+    {
+        font-size: 4vw;
+    }
+
+    .aligner
+    {
+        margin-left: 1.5vw;
+        width: 50%;
+    }
+
+    #aligner1
+    {
+        left: 25%;
+    }
+
+    #aligner2
+    {
+        left: 125%;
+    }
+
+    #aligner3
+    {
+        left: 225%;
+    }
+
+    footer li
+    {
+        margin-top: 1vw;
+        font-size: 4vw;
+    }
+}

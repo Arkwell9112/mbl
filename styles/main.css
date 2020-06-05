@@ -1,0 +1,628 @@
+@charset "UTF-8";
+
+.tounderline
+{
+    text-decoration: underline;
+}
+
+.bottomlink
+{
+    display: block;
+    text-decoration: underline;
+    margin-top: 1.5vw;
+    text-align: left;
+    margin-left: 2vw;
+    margin-right: auto;
+}
+
+.toalign
+{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.tobealigned
+{
+    text-align: left;
+}
+
+#addbutton
+{
+    color: blue;
+}
+
+p
+{
+    margin-top: 2vw;
+    text-align: center;
+    font-family: worksans;
+    font-size: 1.5vw;
+}
+
+p a
+{
+    background-color: #FAF1B9;
+    border-radius: 300px;
+    padding: 20px;
+    line-height: 10vw;
+}
+
+#money
+{
+    font-size: 4vw;
+    color: #FFC700;
+}
+
+#addbutton:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#wallet
+{
+    position: relative;
+    bottom: 0.4vw;
+}
+
+table
+{
+    width: 80%;
+    margin: 2vw auto auto auto;
+    text-align: center;
+}
+
+thead
+{
+    background-color: #FFC700;
+}
+
+tbody
+{
+    background-color: #FAF1B9;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: worksans;
+    font-weight: normal;
+}
+
+td, th
+{
+    padding: 5px 5px 5px 5px;
+}
+
+article #addcell .select2
+{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+article #addcell .productselect
+{
+    width: 50%;
+}
+
+#addsubmit
+{
+    border: none;
+    background-color: transparent;
+    font-family: worksans;
+    color: blue;
+}
+
+#addsubmit:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.editbutton
+{
+    border: none;
+    background-color: transparent;
+    font-family: worksans;
+    color: blue;
+}
+
+.editbutton:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#addcell
+{
+    padding: 10px 10px 10px 10px;
+}
+
+article
+{
+    width: 60%;
+    margin: 3vw auto 0px auto;
+    clear: both;
+}
+
+article .signform {
+    background: linear-gradient(to top right, #FAF1B9, #FFC700);
+    text-align: center;
+    width: 75%;
+    margin: 4vw auto 0px auto;
+    padding: 1vw 0px 1vw 0px;
+    box-shadow: 0 0 4px 1px #808080;
+}
+
+.errorpanel
+{
+    background-color: red;
+    border-radius: 10px;
+    margin: 2vw auto auto auto;
+    padding: 1vw 1vw 1vw 1vw;
+    width: 60%;
+    font-family: worksans;
+}
+
+.infopanel
+{
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin: 2vw auto auto auto;
+    padding: 1vw 1vw 1vw 1vw;
+    width: 60%;
+    font-family: worksans;
+}
+
+.yespanel
+{
+    background-color: lightgreen;
+    border-radius: 10px;
+    margin: 2vw auto auto auto;
+    padding: 1vw 1vw 1vw 1vw;
+    width: 60%;
+    font-family: worksans;
+}
+
+article .signform input
+{
+    background-color: transparent;
+    border: none;
+    font-size: 2vw;
+    margin-top: 3vw;
+    border-bottom: white solid 0.2vw;
+    color: black;
+}
+
+article .signform select
+{
+    width: 60%;
+}
+
+article .signform .select2
+{
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+}
+
+article
+
+article .signform a
+{
+    display: block;
+    text-decoration: underline;
+    margin-top: 1.5vw;
+    text-align: left;
+    margin-left: 2vw;
+    margin-right: auto;
+}
+
+article .signform a:hover
+{
+    font-weight: bold;
+}
+
+#submit:hover
+{
+    color: white;
+}
+
+#firstarticle
+{
+    margin-top: 5vw;
+}
+
+#oncearticle
+{
+    margin-top: 8vw;
+}
+
+#beginbutton
+{
+    text-align: center;
+    background-color: #FFC700;
+    font-family: worksans;
+    font-size: 2vw;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px #808080;
+}
+
+#beginbutton a:hover
+{
+    color: white;
+}
+
+article .title
+{
+    background-color: #FAF1B9;
+    height: 4vw;
+    line-height: 4vw;
+    text-align: center;
+    border-radius: 30px;
+    font-family: worksans;
+    font-size: 2vw;
+    box-shadow: 0 0 15px 0.5px #808080;
+}
+
+article .title img
+{
+    float: left;
+    width: 4vw;
+}
+
+article ul
+{
+    font-family: worksans;
+    padding: 2vw 10px 10px 8vw;
+    font-size: 1.2vw;
+}
+
+#pay
+{
+    position: relative;
+    bottom: 0.25vw;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1280px) {
+    article
+    {
+        width: 80%;
+        margin-top: 7vw;
+    }
+
+    #firstarticle
+    {
+        margin-top: 8vw;
+    }
+
+    article .title
+    {
+        height: 5vw;
+        line-height: 5vw;
+        font-size: 2.5vw;
+    }
+
+    article .title img
+    {
+        width: 5vw;
+    }
+
+    #pay
+    {
+        bottom: 0.3vw;
+    }
+
+    article ul
+    {
+        font-size: 2vw;
+        padding: 4vw 0px 0px 8vw;
+    }
+
+    #beginbutton
+    {
+        width: 40%;
+        font-size: 3vw;
+    }
+
+    article .signform
+    {
+        margin-top: 4vw;
+    }
+
+    article .signform input
+    {
+        font-size: 3vw;
+    }
+
+    article .signform select
+    {
+        width: 70%;
+    }
+
+    article .signform .select2
+    {
+        margin-top: 3vw;
+        margin-bottom: 2vw;
+    }
+
+    #tablecontainment
+    {
+        overflow: scroll;
+    }
+
+    #tablecontainment1
+    {
+        overflow: scroll;
+    }
+
+    table
+    {
+        margin-top: 4vw;
+    }
+
+    p
+    {
+        font-size: 2vw;
+    }
+
+    p a
+    {
+        padding: 10px;
+        line-height: 10vw;
+    }
+
+    #money
+    {
+        font-size: 6vw;
+    }
+}
+
+@media screen and (min-width: 430px) and (max-width: 699px)
+{
+    article
+    {
+        width: 90%;
+        margin-top: 7vw;
+    }
+
+    #firstarticle
+    {
+        margin-top: 8vw;
+    }
+
+    article .title
+    {
+        height: 8vw;
+        line-height: 8vw;
+        font-size: 3.5vw;
+    }
+
+    article .title img
+    {
+        width: 8vw;
+    }
+
+    #pay
+    {
+        bottom: 0.5vw;
+    }
+
+    article ul
+    {
+        font-size: 2.9vw;
+        padding: 4vw 0px 0px 8vw;
+    }
+
+    #beginbutton
+    {
+        font-size: 4vw;
+        width: 55%;
+    }
+
+    article .signform
+    {
+        margin-top: 6vw;
+        font-size: 3vw;
+    }
+
+    article .signform input
+    {
+        font-size: 4vw;
+        margin-top: 4vw;
+    }
+
+    article .signform a
+    {
+        margin-left: 2vw;
+    }
+
+    article .signform select
+    {
+        width: 80%;
+    }
+
+    article .signform .select2
+    {
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .errorpanel
+    {
+        margin-top: 5vw;
+    }
+
+    .infopanel
+    {
+        margin-top: 5vw;
+    }
+
+    .yespanel
+    {
+        margin-top: 5vw;
+    }
+
+    #tablecontainment
+    {
+        overflow: scroll;
+    }
+
+    #tablecontainment1
+    {
+        overflow: scroll;
+    }
+
+    table
+    {
+        margin-top: 6vw;
+    }
+
+    p
+    {
+        font-size: 3vw;
+        margin-top: 6vw;
+    }
+
+    p a
+    {
+        padding: 5px;
+        line-height: 10vw;
+    }
+
+    #money
+    {
+        font-size: 7vw;
+    }
+
+    #wallet
+    {
+        bottom: 0.6vw;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    article
+    {
+        width: 90%;
+        margin-top: 7vw;
+    }
+
+    #firstarticle
+    {
+        margin-top: 8vw;
+    }
+
+    article .title
+    {
+        height: 8vw;
+        line-height: 8vw;
+        font-size: 3.5vw;
+    }
+
+    article .title img
+    {
+        width: 8vw;
+    }
+
+    #pay
+    {
+        bottom: 0.5vw;
+    }
+
+    article ul
+    {
+        font-size: 3.2vw;
+        padding: 4vw 0px 0px 8vw;
+    }
+
+    #beginbutton
+    {
+        font-size: 5vw;
+        width: 75%;
+    }
+
+    article .signform
+    {
+        width: 90%;
+        font-size: 4vw;
+        margin-top: 6vw;
+    }
+
+    article .signform input
+    {
+        font-size: 5vw;
+        margin-top: 6vw;
+    }
+
+    article .signform a
+    {
+        margin-top: 3vw;
+        margin-left: 2vw;
+    }
+
+    article .signform select
+    {
+        width: 90%;
+    }
+
+    article .signform .select2
+    {
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .errorpanel
+    {
+        margin-top: 5vw;
+    }
+
+    .infopanel
+    {
+        margin-top: 5vw;
+    }
+
+    .yespanel
+    {
+        margin-top: 5vw;
+    }
+
+    #tablecontainment
+    {
+        overflow: scroll;
+    }
+
+    #tablecontainment1
+    {
+        overflow: scroll;
+    }
+
+    table
+    {
+        margin-top: 6vw;
+    }
+
+    p
+    {
+        font-size: 3.8vw;
+        margin-top: 6vw;
+    }
+
+    p a
+    {
+        padding: 5px;
+        line-height: 10vw;
+    }
+
+    #money
+    {
+        font-size: 7vw;
+    }
+
+    #wallet
+    {
+        bottom: 0.6vw;
+    }
+}
