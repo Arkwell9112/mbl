@@ -11,7 +11,7 @@ function init() {
 }
 
 function editValue(e) {
-    if(!using) {
+    if (!using) {
         let row = e.target.parentElement.parentElement;
         let cells = row.getElementsByTagName("td");
         cells[0].innerHTML = cells[0].innerHTML + "<input name='username' type='hidden' value='" + cells[0].innerHTML + "'>" + "<input type='hidden' name='action' value='editvalue'>";

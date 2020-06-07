@@ -1,12 +1,10 @@
 @charset "UTF-8";
 
-.tounderline
-{
+.tounderline {
     text-decoration: underline;
 }
 
-.bottomlink
-{
+.bottomlink {
     display: block;
     text-decoration: underline;
     margin-top: 1.5vw;
@@ -15,133 +13,112 @@
     margin-right: auto;
 }
 
-.toalign
-{
+.toalign {
     text-align: center;
     width: 80%;
     margin: auto;
 }
 
-.tobealigned
-{
+.tobealigned {
     text-align: left;
 }
 
-#addbutton
-{
+#addbutton {
     color: blue;
 }
 
-p
-{
+p {
     margin-top: 2vw;
     text-align: center;
     font-family: worksans;
     font-size: 1.5vw;
 }
 
-p a
-{
+p a {
     background-color: #FAF1B9;
     border-radius: 300px;
     padding: 20px;
     line-height: 10vw;
 }
 
-#money
-{
+#money {
     font-size: 4vw;
     color: #FFC700;
 }
 
-#addbutton:hover
-{
+#addbutton:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-#wallet
-{
+#wallet {
     position: relative;
     bottom: 0.4vw;
 }
 
-table
-{
+table {
     width: 80%;
     margin: 2vw auto auto auto;
     text-align: center;
 }
 
-thead
-{
+thead {
     background-color: #FFC700;
 }
 
-tbody
-{
+tbody {
     background-color: #FAF1B9;
 }
 
-table, th, td
-{
+table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     font-family: worksans;
     font-weight: normal;
 }
 
-td, th
-{
+td, th {
     padding: 5px 5px 5px 5px;
 }
 
-article #addcell .select2
-{
+article #addcell .select2 {
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
 
-article #addcell .productselect
-{
+article #addcell .productselect {
     width: 50%;
 }
 
-#addsubmit
-{
+#addsubmit {
     border: none;
     background-color: transparent;
     font-family: worksans;
     color: blue;
 }
 
-#addsubmit:hover
-{
+#addsubmit:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.editbutton
-{
+.editbutton {
     border: none;
     background-color: transparent;
     font-family: worksans;
     color: blue;
 }
 
-.editbutton:hover
-{
+.editbutton:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-#addcell
-{
+#addcell {
     padding: 10px 10px 10px 10px;
 }
 
-article
-{
+article {
     width: 60%;
     margin: 3vw auto 0px auto;
     clear: both;
@@ -156,8 +133,7 @@ article .signform {
     box-shadow: 0 0 4px 1px #808080;
 }
 
-.errorpanel
-{
+.errorpanel {
     background-color: red;
     border-radius: 10px;
     margin: 2vw auto auto auto;
@@ -166,8 +142,7 @@ article .signform {
     font-family: worksans;
 }
 
-.infopanel
-{
+.infopanel {
     background-color: lightgrey;
     border-radius: 10px;
     margin: 2vw auto auto auto;
@@ -176,8 +151,7 @@ article .signform {
     font-family: worksans;
 }
 
-.yespanel
-{
+.yespanel {
     background-color: lightgreen;
     border-radius: 10px;
     margin: 2vw auto auto auto;
@@ -186,8 +160,7 @@ article .signform {
     font-family: worksans;
 }
 
-article .signform input
-{
+article .signform input {
     background-color: transparent;
     border: none;
     font-size: 2vw;
@@ -196,21 +169,17 @@ article .signform input
     color: black;
 }
 
-article .signform select
-{
+article .signform select {
     width: 60%;
 }
 
-article .signform .select2
-{
+article .signform .select2 {
     margin-top: 3vw;
     margin-bottom: 2vw;
 }
 
 article
-
-article .signform a
-{
+article .signform a {
     display: block;
     text-decoration: underline;
     margin-top: 1.5vw;
@@ -219,28 +188,23 @@ article .signform a
     margin-right: auto;
 }
 
-article .signform a:hover
-{
+article .signform a:hover {
     font-weight: bold;
 }
 
-#submit:hover
-{
+#submit:hover {
     color: white;
 }
 
-#firstarticle
-{
+#firstarticle {
     margin-top: 5vw;
 }
 
-#oncearticle
-{
+#oncearticle {
     margin-top: 8vw;
 }
 
-#beginbutton
-{
+#beginbutton {
     text-align: center;
     background-color: #FFC700;
     font-family: worksans;
@@ -250,13 +214,11 @@ article .signform a:hover
     box-shadow: 0 0 4px 1px #808080;
 }
 
-#beginbutton a:hover
-{
+#beginbutton a:hover {
     color: white;
 }
 
-article .title
-{
+article .title {
     background-color: #FAF1B9;
     height: 4vw;
     line-height: 4vw;
@@ -267,377 +229,309 @@ article .title
     box-shadow: 0 0 15px 0.5px #808080;
 }
 
-article .title img
-{
+article .title img {
     float: left;
     width: 4vw;
 }
 
-article ul
-{
+article ul {
     font-family: worksans;
     padding: 2vw 10px 10px 8vw;
     font-size: 1.2vw;
 }
 
-#pay
-{
+#pay {
     position: relative;
     bottom: 0.25vw;
 }
 
 @media screen and (min-width: 700px) and (max-width: 1280px) {
-    article
-    {
+    article {
         width: 80%;
         margin-top: 7vw;
     }
 
-    #secondnav
-    {
+    #secondnav {
         font-size: 3vw;
     }
 
-    #oncearticle
-    {
+    #oncearticle {
         margin-top: 15vw;
     }
 
-    #firstarticle
-    {
+    #firstarticle {
         margin-top: 8vw;
     }
 
-    article .title
-    {
+    article .title {
         height: 5vw;
         line-height: 5vw;
         font-size: 2.5vw;
     }
 
-    article .title img
-    {
+    article .title img {
         width: 5vw;
     }
 
-    #pay
-    {
+    #pay {
         bottom: 0.3vw;
     }
 
-    article ul
-    {
+    article ul {
         font-size: 2vw;
         padding: 4vw 0px 0px 8vw;
     }
 
-    #beginbutton
-    {
+    #beginbutton {
         width: 40%;
         font-size: 3vw;
     }
 
-    article .signform
-    {
+    article .signform {
         margin-top: 4vw;
     }
 
-    article .signform input
-    {
+    article .signform input {
         font-size: 3vw;
     }
 
-    article .signform select
-    {
+    article .signform select {
         width: 70%;
     }
 
-    article .signform .select2
-    {
+    article .signform .select2 {
         margin-top: 3vw;
         margin-bottom: 2vw;
     }
 
-    .tablecontain
-    {
+    .tablecontain {
         overflow: scroll;
     }
 
-    table
-    {
+    table {
         margin-top: 4vw;
     }
 
-    p
-    {
+    p {
         font-size: 2vw;
     }
 
-    p a
-    {
+    p a {
         padding: 10px;
         line-height: 10vw;
     }
 
-    #money
-    {
+    #money {
         font-size: 6vw;
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 699px)
-{
-    article
-    {
+@media screen and (min-width: 430px) and (max-width: 699px) {
+    article {
         width: 90%;
         margin-top: 7vw;
     }
 
-    #firstarticle
-    {
+    #firstarticle {
         margin-top: 8vw;
     }
 
-    #secondnav
-    {
+    #secondnav {
         font-size: 4vw;
     }
 
-    #oncearticle
-    {
+    #oncearticle {
         margin-top: 18vw;
     }
 
-    article .title
-    {
+    article .title {
         height: 8vw;
         line-height: 8vw;
         font-size: 3.5vw;
     }
 
-    article .title img
-    {
+    article .title img {
         width: 8vw;
     }
 
-    #pay
-    {
+    #pay {
         bottom: 0.5vw;
     }
 
-    article ul
-    {
+    article ul {
         font-size: 2.9vw;
         padding: 4vw 0px 0px 8vw;
     }
 
-    #beginbutton
-    {
+    #beginbutton {
         font-size: 4vw;
         width: 55%;
     }
 
-    article .signform
-    {
+    article .signform {
         margin-top: 6vw;
         font-size: 3vw;
     }
 
-    article .signform input
-    {
+    article .signform input {
         font-size: 4vw;
         margin-top: 4vw;
     }
 
-    article .signform a
-    {
+    article .signform a {
         margin-left: 2vw;
     }
 
-    article .signform select
-    {
+    article .signform select {
         width: 80%;
     }
 
-    article .signform .select2
-    {
+    article .signform .select2 {
         margin-top: 4vw;
         margin-bottom: 3vw;
     }
 
-    .errorpanel
-    {
+    .errorpanel {
         margin-top: 5vw;
     }
 
-    .infopanel
-    {
+    .infopanel {
         margin-top: 5vw;
     }
 
-    .yespanel
-    {
+    .yespanel {
         margin-top: 5vw;
     }
 
-    .tablecontain
-    {
+    .tablecontain {
         overflow: scroll;
     }
 
-    table
-    {
+    table {
         margin-top: 6vw;
     }
 
-    p
-    {
+    p {
         font-size: 3vw;
         margin-top: 6vw;
     }
 
-    p a
-    {
+    p a {
         padding: 5px;
         line-height: 10vw;
     }
 
-    #money
-    {
+    #money {
         font-size: 7vw;
     }
 
-    #wallet
-    {
+    #wallet {
         bottom: 0.6vw;
     }
 }
 
 @media screen and (max-width: 429px) {
-    article
-    {
+    article {
         width: 90%;
         margin-top: 7vw;
     }
 
-    #firstarticle
-    {
+    #firstarticle {
         margin-top: 8vw;
     }
 
-    #secondnav
-    {
+    #secondnav {
         font-size: 4vw;
     }
 
-    #oncearticle
-    {
+    #oncearticle {
         margin-top: 18vw;
     }
 
-    article .title
-    {
+    article .title {
         height: 8vw;
         line-height: 8vw;
         font-size: 3.5vw;
     }
 
-    article .title img
-    {
+    article .title img {
         width: 8vw;
     }
 
-    #pay
-    {
+    #pay {
         bottom: 0.5vw;
     }
 
-    article ul
-    {
+    article ul {
         font-size: 3.2vw;
         padding: 4vw 0px 0px 8vw;
     }
 
-    #beginbutton
-    {
+    #beginbutton {
         font-size: 5vw;
         width: 75%;
     }
 
-    article .signform
-    {
+    article .signform {
         width: 90%;
         font-size: 4vw;
         margin-top: 6vw;
     }
 
-    article .signform input
-    {
+    article .signform input {
         font-size: 5vw;
         margin-top: 6vw;
     }
 
-    article .signform a
-    {
+    article .signform a {
         margin-top: 3vw;
         margin-left: 2vw;
     }
 
-    article .signform select
-    {
+    article .signform select {
         width: 90%;
     }
 
-    article .signform .select2
-    {
+    article .signform .select2 {
         margin-top: 4vw;
         margin-bottom: 3vw;
     }
 
-    .errorpanel
-    {
+    .errorpanel {
         margin-top: 5vw;
     }
 
-    .infopanel
-    {
+    .infopanel {
         margin-top: 5vw;
     }
 
-    .yespanel
-    {
+    .yespanel {
         margin-top: 5vw;
     }
 
-    .tablecontain
-    {
+    .tablecontain {
         overflow: scroll;
     }
 
-    table
-    {
+    table {
         margin-top: 6vw;
     }
 
-    p
-    {
+    p {
         font-size: 3.8vw;
         margin-top: 6vw;
     }
 
-    p a
-    {
+    p a {
         padding: 5px;
         line-height: 10vw;
     }
 
-    #money
-    {
+    #money {
         font-size: 7vw;
     }
 
-    #wallet
-    {
+    #wallet {
         bottom: 0.6vw;
     }
 }

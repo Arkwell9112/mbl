@@ -70,7 +70,7 @@ if ($isadmin) {
             "title" => "Paiement commande",
             "content" => $products
         );
-        if($result[0]["delivered"] == 0) {
+        if ($result[0]["delivered"] == 0) {
             ValueManager::editValue($bdd, -$result[0][WeekDay::getDay() . "value"], $linkeduser, $content, "", true);
             $amount = "yes";
         } else {
@@ -99,7 +99,7 @@ if ($isadmin) {
 </head>
 <body>
 <?php
-if(!$isadmin || $amount == "yes") {
+if (!$isadmin || $amount == "yes") {
     echo "<img src='../imgs/tick.svg'>";
 } else {
     echo "<img src='../imgs/cross.svg'>";
@@ -107,10 +107,10 @@ if(!$isadmin || $amount == "yes") {
 ?>
 <p>
     <?php
-    if(!$isadmin) {
+    if (!$isadmin) {
         echo "Ce sac à pain appartient à $linkeduser.";
     } else {
-        if($amount == "yes") {
+        if ($amount == "yes") {
             echo "La commande a bien été payée par $linkeduser.<br><br>";
         } else {
             echo "La commande n'a pas pu être payée par $linkeduser à cause d'un manque de fonds.<br><br>";

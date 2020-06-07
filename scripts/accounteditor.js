@@ -45,7 +45,7 @@ function editproduct(e) {
             if (cell == 0) {
                 cells[cell].innerHTML = cells[cell].innerHTML + "<input type='hidden' name='product' value='" + cells[cell].innerHTML + "'>" + "<input type='hidden' name='action' value='edit'>";
             } else if (cell != 8) {
-                if(cells[cell].innerHTML != "Non livré") {
+                if (cells[cell].innerHTML != "Non livré") {
                     cells[cell].innerHTML = "<input type='text'class='selectstyle' size='2' name='" + (cell - 1) + "' value='" + cells[cell].innerHTML + "'>";
                 }
             } else {

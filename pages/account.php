@@ -136,7 +136,7 @@ include("../frags/fragHeader.php");
             <tr>
                 <?php
                 for ($i = 1; $i <= count($result3[0]) / 2 - 1; $i++) {
-                    if($result3[0][$i] == "0") {
+                    if ($result3[0][$i] == "0") {
                         echo "<td>Non livré</td>";
                     } else {
                         $day = $result3[0][$i];

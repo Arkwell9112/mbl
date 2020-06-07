@@ -10,7 +10,7 @@ $secondref = "../pages/main.php";
 $isnav = true;
 $title = "S'inscrire";
 
-if(isset($_GET["status"])) {
+if (isset($_GET["status"])) {
     $status = $_GET["status"];
 } else {
     $status = "";
@@ -25,7 +25,7 @@ try {
     $status = $status . "special";
 }
 
-if(isset($bdd) && isset($_COOKIE["token"])) {
+if (isset($bdd) && isset($_COOKIE["token"])) {
     try {
         ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
         header("Location: http://localhost/mbl/pages/account.php");
@@ -41,32 +41,35 @@ include("../frags/fragHeader.php");
         <h3>S'inscrire</h3>
     </div>
     <div class="signform" id="toreplaceform">
-        <?php if(preg_match("#special#", $status)) include("../frags/fragErrorSpecial.php")?>
-        <?php if(preg_match("#yes#", $status)) include("../frags/fragYesSignup.php")?>
+        <?php if (preg_match("#special#", $status)) include("../frags/fragErrorSpecial.php") ?>
+        <?php if (preg_match("#yes#", $status)) include("../frags/fragYesSignup.php") ?>
         <form method="post" action="signupaction.php">
-            <?php if(preg_match("#badusername#", $status)) include("../frags/fragErrorUsername.php")?>
-            <?php if(preg_match("#usernameexists#", $status)) include("../frags/fragInfoUsername.php")?>
-            <input value="<?php if(isset($_GET["username"])) echo $_GET["username"] ?>" type="text" name="username" placeholder="Nom d'utilisateur"><br>
-            <?php if(preg_match("#badpasswd#", $status)) include("../frags/fragErrorPasswd.php")?>
-            <?php if(preg_match("#diffpasswd#", $status)) include("../frags/fragInfoDiff.php")?>
+            <?php if (preg_match("#badusername#", $status)) include("../frags/fragErrorUsername.php") ?>
+            <?php if (preg_match("#usernameexists#", $status)) include("../frags/fragInfoUsername.php") ?>
+            <input value="<?php if (isset($_GET["username"])) echo $_GET["username"] ?>" type="text" name="username"
+                   placeholder="Nom d'utilisateur"><br>
+            <?php if (preg_match("#badpasswd#", $status)) include("../frags/fragErrorPasswd.php") ?>
+            <?php if (preg_match("#diffpasswd#", $status)) include("../frags/fragInfoDiff.php") ?>
             <input type="password" name="passwd1" placeholder="Mot de passe"><br>
             <input type="password" name="passwd2" placeholder="Répétez le mot de passe" size="25"><br>
-            <?php if(preg_match("#badmail#", $status)) include("../frags/fragErrorMail.php")?>
-            <?php if(preg_match("#mailexists#", $status)) include("../frags/fragInfoMail.php")?>
-            <input value="<?php if(isset($_GET["mail"])) echo $_GET["mail"] ?>" type="email" name="mail" placeholder="Adresse e-mail" size="25"><br>
-            <?php if(preg_match("#phoneexists#", $status)) include("../frags/fragInfoPhone.php")?>
-            <?php if(preg_match("#badphone#", $status)) include("../frags/fragErrorPhone.php")?>
-            <input value="<?php if(isset($_GET["phone"])) echo $_GET["phone"] ?>" type="tel" name="phone" placeholder="Numéro de téléphone" size="25"><br>
-            <?php if(preg_match("#badcity#", $status)) include("../frags/fragErrorCity.php")?>
+            <?php if (preg_match("#badmail#", $status)) include("../frags/fragErrorMail.php") ?>
+            <?php if (preg_match("#mailexists#", $status)) include("../frags/fragInfoMail.php") ?>
+            <input value="<?php if (isset($_GET["mail"])) echo $_GET["mail"] ?>" type="email" name="mail"
+                   placeholder="Adresse e-mail" size="25"><br>
+            <?php if (preg_match("#phoneexists#", $status)) include("../frags/fragInfoPhone.php") ?>
+            <?php if (preg_match("#badphone#", $status)) include("../frags/fragErrorPhone.php") ?>
+            <input value="<?php if (isset($_GET["phone"])) echo $_GET["phone"] ?>" type="tel" name="phone"
+                   placeholder="Numéro de téléphone" size="25"><br>
+            <?php if (preg_match("#badcity#", $status)) include("../frags/fragErrorCity.php") ?>
             <select class="cityselect" name="city">
                 <option value="none">Sélectionnez votre village de résidence</option>
                 <?php
-                    if(isset($result)) {
-                        foreach ($result as $value) {
-                            $option = $value['name'];
-                            echo "<option value='$option'>$option</option>";
-                        }
+                if (isset($result)) {
+                    foreach ($result as $value) {
+                        $option = $value['name'];
+                        echo "<option value='$option'>$option</option>";
                     }
+                }
                 ?>
             </select><br>
             <input id="submit" type="submit" value="Inscription">

@@ -6,11 +6,11 @@
     <div id="tablecontainment1" class="tablecontain">
         <table>
             <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Prix</th>
-                    <th>Action</th>
-                </tr>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
             </thead>
             <tbody>
             <?php
@@ -69,7 +69,9 @@
                 echo "</tr>";
             }
             ?>
-            <tr><td colspan="9" id="addcell2"><span id="addbutton2" class="editbutton">Ajouter un village</span></td></tr>
+            <tr>
+                <td colspan="9" id="addcell2"><span id="addbutton2" class="editbutton">Ajouter un village</span></td>
+            </tr>
             </tbody>
         </table>
     </div>

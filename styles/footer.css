@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-footer
-{
+footer {
     background-image: url("../imgs/fbackground.png");
     background-size: cover;
     box-shadow: 0 0 30px 2px #808080;
@@ -11,8 +10,7 @@ footer
     font-family: worksans;
 }
 
-#copyright
-{
+#copyright {
     position: absolute;
     text-align: center;
     bottom: 1vw;
@@ -21,125 +19,102 @@ footer
     font-weight: normal;
 }
 
-#rightarrow
-{
+#rightarrow {
     display: none;
 }
 
-#leftarrow
-{
+#leftarrow {
     display: none;
 }
 
-footer ul
-{
+footer ul {
     list-style: none;
     padding: 0px;
 }
 
-footer a
-{
+footer a {
     color: grey;
 }
 
-footer a:hover
-{
+footer a:hover {
     color: lightgrey;
 }
 
-footer h4
-{
+footer h4 {
     font-size: 1.4vw;
 }
 
-.aligner
-{
+.aligner {
     width: 33.33%;
     float: left;
     text-align: center;
 }
 
-.aligned
-{
+.aligned {
     display: inline-block;
     text-align: left;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px){
-    footer
-    {
+@media screen and (min-width: 700px) and (max-width: 1280px) {
+    footer {
         height: 20vw;
     }
 
-    footer h4
-    {
+    footer h4 {
         font-size: 2vw;
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 699px)
-{
-    footer
-    {
+@media screen and (min-width: 430px) and (max-width: 699px) {
+    footer {
         height: 35vw;
         margin-top: 10vw;
         padding-top: 2vw;
     }
 
-    footer h4
-    {
+    footer h4 {
         font-size: 4vw;
     }
 
-    .aligner
-    {
+    .aligner {
         margin-left: 1.5vw;
         width: 50%;
     }
 
-    #aligner1
-    {
+    #aligner1 {
         left: 25%;
     }
 
-    #aligner2
-    {
+    #aligner2 {
         left: 125%;
     }
 
-    #aligner3
-    {
+    #aligner3 {
         left: 225%;
     }
 
-    footer li
-    {
+    footer li {
         margin-top: 1vw;
         font-size: 3.5vw;
     }
 }
 
-@media screen and (max-width: 699px)
-{
-    footer
-    {
+@media screen and (max-width: 699px) {
+    footer {
         position: relative;
         overflow: hidden;
     }
 
-    .aligner
-    {
+    .aligner {
         position: absolute;
         transition: left .3s ease;
     }
 
-    body
-    {
+    body {
         width: 100%;
     }
 
-    #rightarrow
-    {
+    #rightarrow {
         display: block;
         position: absolute;
         right: 10%;
@@ -147,8 +122,7 @@ footer h4
         bottom: 45%;
     }
 
-    #leftarrow
-    {
+    #leftarrow {
         display: none;
         position: absolute;
         left: 10%;
@@ -158,41 +132,34 @@ footer h4
 }
 
 @media screen and (max-width: 429px) {
-    footer
-    {
+    footer {
         height: 35vw;
         margin-top: 10vw;
         padding-top: 2vw;
     }
 
-    footer h4
-    {
+    footer h4 {
         font-size: 4vw;
     }
 
-    .aligner
-    {
+    .aligner {
         margin-left: 1.5vw;
         width: 50%;
     }
 
-    #aligner1
-    {
+    #aligner1 {
         left: 25%;
     }
 
-    #aligner2
-    {
+    #aligner2 {
         left: 125%;
     }
 
-    #aligner3
-    {
+    #aligner3 {
         left: 225%;
     }
 
-    footer li
-    {
+    footer li {
         margin-top: 1vw;
         font-size: 4vw;
     }

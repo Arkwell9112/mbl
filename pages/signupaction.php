@@ -5,7 +5,7 @@ try {
     AccountManager::createAccount(PDOManager::getPDO(), $_POST["username"], $_POST["passwd1"], $_POST["passwd2"], $_POST["mail"], $_POST["phone"], $_POST["city"]);
     header("Location: http://localhost/mbl/pages/signup.php?status=yes");
 } catch (MBLException $e) {
-    if($e->getMessage() != "special") {
+    if ($e->getMessage() != "special") {
         $message = $e->getMessage();
         $username = $_POST["username"];
         $mail = $_POST["mail"];

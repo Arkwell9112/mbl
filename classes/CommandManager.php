@@ -103,6 +103,31 @@ class CommandManager
         }
     }
 
+    public static function deleteProductFromAll(PDO $bdd, String $product)
+    {
+        $request = $bdd->prepare("SELECT * FROM users");
+        $request->execute();
+        $result = $request->fetchAll();
+        try {
+            $bdd->beginTransaction();
+            foreach ($result as $user) {
+                $command = json_decode($user["command"], true);
+                if (array_key_exists($product, $command)) {
+                    self::deleteProduct($bdd, $product, $user["username"], false);
+                    //add mail sending
+                }
+            }
+            $request = $bdd->prepare("DELETE FROM products WHERE name=:name");
+            $request->execute(array(
+                "name" => $product
+            ));
+            $bdd->commit();
+        } catch (Exception $e) {
+            $bdd->rollBack();
+            throw new MBLException("special");
+        }
+    }
+
     public static function deleteProduct(PDO $bdd, String $product, String $username, bool $errored)
     {
         $request = $bdd->prepare("SELECT command FROM users WHERE username=:username");
@@ -130,31 +155,6 @@ class CommandManager
             self::updateValue($bdd, $command, $username);
         } else {
             throw new MBLException("badproduct");
-        }
-    }
-
-    public static function deleteProductFromAll(PDO $bdd, String $product)
-    {
-        $request = $bdd->prepare("SELECT * FROM users");
-        $request->execute();
-        $result = $request->fetchAll();
-        try {
-            $bdd->beginTransaction();
-            foreach ($result as $user) {
-                $command = json_decode($user["command"], true);
-                if (array_key_exists($product, $command)) {
-                    self::deleteProduct($bdd, $product, $user["username"], false);
-                    //add mail sending
-                }
-            }
-            $request = $bdd->prepare("DELETE FROM products WHERE name=:name");
-            $request->execute(array(
-                "name" => $product
-            ));
-            $bdd->commit();
-        } catch (Exception $e) {
-            $bdd->rollBack();
-            throw new MBLException("special");
         }
     }
 
@@ -205,7 +205,7 @@ class CommandManager
             foreach ($result as $user) {
                 $command = json_decode($user["command"], true);
                 for ($i = 0; $i <= 6; $i++) {
-                    if($days[$i] == "0") {
+                    if ($days[$i] == "0") {
                         foreach ($command as $key => $product) {
                             $command[$key][$i] = 0;
                         }

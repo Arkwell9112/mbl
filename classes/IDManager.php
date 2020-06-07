@@ -3,14 +3,15 @@
 
 class IDManager
 {
-    public static function getSafeID(PDO $bdd) : int {
+    public static function getSafeID(PDO $bdd): int
+    {
         $request = $bdd->prepare("LOCK TABLES global WRITE");
         $request->execute();
         $request = $bdd->prepare("SELECT value FROM global WHERE label='id'");
         $request->execute();
         $result = $request->fetchAll();
         $id = $result[0]["value"];
-        if($id == PHP_INT_MAX) {
+        if ($id == PHP_INT_MAX) {
             $id = PHP_INT_MIN;
         } else {
             $id++;
@@ -24,7 +25,8 @@ class IDManager
         return $id;
     }
 
-    public static function getOwnID(PDO $bdd, String $username) : int {
+    public static function getOwnID(PDO $bdd, String $username): int
+    {
         $request = $bdd->prepare("LOCK TABLES accounts WRITE");
         $request->execute();
         $request = $bdd->prepare("SELECT ownid FROM accounts WHERE username=:username");
@@ -33,7 +35,7 @@ class IDManager
         ));
         $result = $request->fetchAll();
         $id = $result[0]["ownid"];
-        if($id == PHP_INT_MAX) {
+        if ($id == PHP_INT_MAX) {
             $id = PHP_INT_MIN;
         } else {
             $id++;

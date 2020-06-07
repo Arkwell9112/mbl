@@ -1,5 +1,5 @@
 <?php
-if(!isset($toadd)) {
+if (!isset($toadd)) {
     $toadd = "";
 }
 ?>
@@ -30,5 +30,5 @@ if(!isset($toadd)) {
     </div>
     <img src="../imgs/leftback.svg" id="leftback">
     <img src="../imgs/rightback.svg" id="rightback">
-    <?php if($isnav) include("fragNav.php"); ?>
+    <?php if ($isnav) include("fragNav.php"); ?>
 </header>

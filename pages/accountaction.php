@@ -6,8 +6,8 @@ include("../classes/ConnectionManager.php");
 try {
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
-    if(isset($_GET["action"])) {
-        if($_GET["action"] == "disconnect") {
+    if (isset($_GET["action"])) {
+        if ($_GET["action"] == "disconnect") {
             ConnectionManager::disconnectWithToken($bdd, $_COOKIE["token"]);
         }
     }
@@ -19,7 +19,7 @@ try {
     } else if ($_POST["action"] == "edit") {
         $amounts = array();
         for ($i = 0; $i <= 6; $i++) {
-            if(isset($_POST[$i])) {
+            if (isset($_POST[$i])) {
                 $amounts[$i] = $_POST[$i];
             } else {
                 $amounts[$i] = 0;

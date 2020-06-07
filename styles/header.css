@@ -7,39 +7,33 @@
     font-style: normal;
 }
 
-*
-{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
-body
-{
+body {
     position: relative;
 }
 
-#secondnav
-{
+#secondnav {
     text-align: center;
     font-family: worksans;
     margin-top: 4vw;
     font-size: 1.5vw;
 }
 
-.innernav
-{
+.innernav {
     float: left;
     width: 33.33%;
 }
 
-.innernav a
-{
+.innernav a {
     color: #FFC700;
 }
 
-header
-{
+header {
     background-image: url("../imgs/fbackground.png");
     background-size: cover;
     height: 25vw;
@@ -47,24 +41,21 @@ header
     position: relative;
 }
 
-#leftback
-{
+#leftback {
     position: absolute;
     left: 0px;
     bottom: 0px;
     height: 100%;
 }
 
-#rightback
-{
+#rightback {
     position: absolute;
     right: 0px;
     bottom: 0px;
     height: 100%;
 }
 
-header h1
-{
+header h1 {
     text-align: center;
     line-height: 25vw;
     font-size: 3.8vw;
@@ -73,8 +64,7 @@ header h1
     position: relative;
 }
 
-header div div
-{
+header div div {
     position: absolute;
     right: 24vw;
     bottom: 8.5vw;
@@ -83,15 +73,13 @@ header div div
     z-index: 1;
 }
 
-a
-{
+a {
     text-decoration: none;
     color: black;
     position: relative;
 }
 
-a::after
-{
+a::after {
     content: "";
     position: absolute;
     bottom: -1px;
@@ -101,45 +89,38 @@ a::after
     width: 0px;
 }
 
-#leftnav
-{
+#leftnav {
     display: inline-block;
     margin-right: 0.4vw;
 }
 
-#leftnav a::after
-{
+#leftnav a::after {
     transition: width .3s ease, background-color .3s ease, right .3s ease;
 }
 
-#leftnav a:hover::after
-{
+#leftnav a:hover::after {
     width: 100%;
     right: 0;
     background-color: #FFFFFF;
 }
 
-#rightnav
-{
+#rightnav {
     display: inline-block;
     line-height: 5vw;
     margin-left: 0.4vw;
 }
 
-#rightnav a::after
-{
+#rightnav a::after {
     transition: width .3s ease, background-color .3s ease, right .3s ease;
 }
 
-#rightnav a:hover::after
-{
+#rightnav a:hover::after {
     width: 100%;
     right: 0;
     background-color: #FFFFFF;
 }
 
-nav
-{
+nav {
     position: absolute;
     left: 2vw;
     top: 2vw;
@@ -153,50 +134,41 @@ nav
     z-index: 1;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px){
-    nav
-    {
+@media screen and (min-width: 700px) and (max-width: 1280px) {
+    nav {
         font-size: 2vw;
     }
 
-    header h1
-    {
+    header h1 {
         font-size: 5vw;
     }
 
-    header div div
-    {
+    header div div {
         right: 20vw;
         bottom: 7.5vw;
         font-size: 2.2vw;
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 699px)
-{
-    nav
-    {
+@media screen and (min-width: 430px) and (max-width: 699px) {
+    nav {
         font-size: 3vw;
     }
 
-    a::after
-    {
+    a::after {
         height: 0.3vw;
     }
 
-    header
-    {
+    header {
         height: 30vw;
     }
 
-    header h1
-    {
+    header h1 {
         font-size: 7vw;
         line-height: 30vw;
     }
 
-    header div div
-    {
+    header div div {
         font-size: 3vw;
         bottom: 6vw;
         right: 12vw;
@@ -204,29 +176,24 @@ nav
 }
 
 @media screen and (max-width: 429px) {
-    nav
-    {
+    nav {
         font-size: 3.5vw;
     }
 
-    a::after
-    {
+    a::after {
         height: 0.3vw;
     }
 
-    header
-    {
+    header {
         height: 35vw;
     }
 
-    header h1
-    {
+    header h1 {
         font-size: 8vw;
         line-height: 35vw;
     }
 
-    header div div
-    {
+    header div div {
         font-size: 4vw;
         bottom: 7vw;
         right: 6vw;

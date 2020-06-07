@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('.cityselect').select2();
     initiation();
 });
@@ -22,8 +22,7 @@ function initiation() {
     let bottom = footer.offsetTop + footer.offsetHeight;
     let form = document.getElementById("toreplaceform");
     let title = document.getElementsByClassName("title")[0];
-    if(bottom < window.innerHeight)
-    {
+    if (bottom < window.innerHeight) {
         footer.style.position = "fixed";
         footer.style.bottom = "0px";
         footer.style.width = "100%";

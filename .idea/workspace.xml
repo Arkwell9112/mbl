@@ -2,19 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41d118f0-4a04-4fb9-a187-d37c5e79e604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AccountManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AccountManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/CommandManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/CommandManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConnectionManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ConnectionManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/IDManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/IDManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/LinkManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/LinkManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MBLException.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/MBLException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/PDOManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/PDOManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ValueManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ValueManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frags/fragAccountCities.php" beforeDir="false" afterPath="$PROJECT_DIR$/frags/fragAccountCities.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frags/fragAccountClients.php" beforeDir="false" afterPath="$PROJECT_DIR$/frags/fragAccountClients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frags/fragHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/frags/fragHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frags/fragLinkUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/background.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/background2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/croissant.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/croissant.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/cross.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/cross.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/datas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/datas.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/delivery.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/delivery.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/deliverytime.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/deliverytime.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/leftarrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/leftarrow.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/leftback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/leftback.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/lock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/lock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/money.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/money.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/operation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/operation.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/pay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/pay.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/rightarrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/rightarrow.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/rightback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/rightback.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/safe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/safe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/softbread.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/softbread.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/tick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/tick.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/time.svg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/time.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/adminaccountaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/adminaccountaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/accountaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/accountaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/adminaccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/adminaccount.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/link.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/link.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/reset.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/resetpasswd.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/resetpasswd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signupaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signupaction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/accounteditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/accounteditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cityeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cityeditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/clienteditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/clienteditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/footresp.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/footresp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/link.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/link.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +184,8 @@
       <workItem from="1591448353576" duration="320000" />
       <workItem from="1591452210446" duration="4147000" />
       <workItem from="1591520094340" duration="591000" />
-      <workItem from="1591523666780" duration="1307000" />
+      <workItem from="1591523666780" duration="4343000" />
+      <workItem from="1591531847717" duration="735000" />
     </task>
     <servers />
   </component>
@@ -163,18 +197,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="595" y="228" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1591367975472" />
-    <state x="604" y="337" key="NewPhpFileDialog" timestamp="1591454222796">
+    <state x="604" y="337" key="NewPhpFileDialog" timestamp="1591532034160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="337" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1591454222796" />
+    <state x="604" y="337" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1591532034160" />
     <state x="277" y="56" key="SettingsEditor" timestamp="1590668198867">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590668198867" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1591523711274">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1591531851770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591523711274" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591531851770" />
+    <state x="0" y="0" width="740" height="824" key="find.popup" timestamp="1591525672394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="740" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1591525672394" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590759271384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
