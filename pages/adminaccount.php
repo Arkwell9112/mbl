@@ -33,14 +33,14 @@ try {
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (!PDOManager::checkAdmin($username)) {
-        header("Location: http://localhost/mbl/pages/account.php");
+        header("Location: https://monboulangerlivreur.fr/pages/account.php");
         exit();
     }
     $request = $bdd->prepare("SELECT * FROM users");
     $request->execute();
     $result = $request->fetchAll();
 } catch (Exception $e) {
-    header("Location: http://localhost/mbl/pages/signin.php");
+    header("Location: https://monboulangerlivreur.fr/pages/signin.php");
     exit();
 }
 include("../frags/fragHeader.php");

@@ -23,7 +23,7 @@ try {
             }
         }
     } else {
-        header("Location: http://localhost/mbl/pages/main.php");
+        header("Location: https://monboulangerlivreur.fr/pages/main.php");
         exit();
     }
 } catch (MBLException $e) {
@@ -36,18 +36,18 @@ try {
                 header("Refresh:0");
                 exit();
             } else {
-                header("Location: http://localhost/mbl/pages/signin.php?backtrace=$token");
+                header("Location: https://monboulangerlivreur.fr/pages/signin.php?backtrace=$token");
                 exit();
             }
         } catch (MBLException $e) {
-            header("Location: http://localhost/mbl/pages/signin.php?backtrace=$token");
+            header("Location: https://monboulangerlivreur.fr/pages/signin.php?backtrace=$token");
             exit();
         } catch (Exception $e) {
             header("Refresh:0");
             exit();
         }
     } else if ($e->getMessage() == "badtoken") {
-        header("Location: http://localhost/mbl/pages/main.php");
+        header("Location: https://monboulangerlivreur.fr/pages/main.php");
         exit();
     }
 }

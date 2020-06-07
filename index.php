@@ -1,2 +1,2 @@
 <?php
-header("Location: http://localhost/mbl/pages/main.php");
+header("Location: https://monboulangerlivreur.fr/pages/main.php");

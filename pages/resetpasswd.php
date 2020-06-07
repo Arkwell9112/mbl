@@ -7,7 +7,7 @@ $isnav = true;
 $title = "Réinitialiser votre mot de passe";
 
 if (!isset($_GET["token"])) {
-    header("Location: http://localhost/mbl/pages/main.php");
+    header("Location: https://monboulangerlivreur.fr/pages/main.php");
 }
 
 $hiddenvalue = $_GET["token"];

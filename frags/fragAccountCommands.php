@@ -30,13 +30,13 @@ try {
                 if ($user["value"] >= $amount) {
                     $command = json_decode($user["command"], true);
                     foreach ($command as $key => $product) {
-                        if(!isset($prediction[$cityname])) {
+                        if (!isset($prediction[$cityname])) {
                             $prediction[$cityname] = array();
                         }
-                        if(!isset($prediction[$cityname][$key])) {
+                        if (!isset($prediction[$cityname][$key])) {
                             $prediction[$cityname][$key] = array();
                         }
-                        if(!isset($prediction[$cityname][$key][$day])) {
+                        if (!isset($prediction[$cityname][$key][$day])) {
                             $prediction[$cityname][$key][$day] = 0;
                         }
                         $prediction[$cityname][$key][$day] = $prediction[$cityname][$key][$day] + $product[$day];

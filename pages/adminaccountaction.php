@@ -9,7 +9,7 @@ try {
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (!PDOManager::checkAdmin($username)) {
         throw new MBLException("notadmin");
-        header("Location: http://localhost/mbl/pages/account.php");
+        header("Location: https://monboulangerlivreur.fr/pages/account.php");
         exit();
     }
     if ($_POST["action"] == "editvalue") {
@@ -20,20 +20,20 @@ try {
             )
         );
         ValueManager::editValue($bdd, $_POST["amount"], $_POST["username"], $content, "");
-        header("Location: http://localhost/mbl/pages/adminaccount.php");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
     } else if ($_POST["action"] == "deleteproduct") {
         CommandManager::deleteProductFromAll($bdd, $_POST["product"]);
-        header("Location: http://localhost/mbl/pages/adminaccount.php?page=cities");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
     } else if ($_POST["action"] == "editproduct") {
         CommandManager::updateValueFromAll($bdd, $_POST["product"], $_POST["price"]);
-        header("Location: http://localhost/mbl/pages/adminaccount.php?page=cities");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
     } else if ($_POST["action"] == "addproduct") {
         CommandManager::addProduct($bdd, $_POST["product"]);
-        header("Location: http://localhost/mbl/pages/adminaccount.php?page=cities");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
     } else if ($_POST["action"] == "addcity") {
         $days = array(0, 0, 0, 0, 0, 0, 0);
         CommandManager::deleteDayFromAll($bdd, $days, true, $_POST["city"]);
-        header("Location: http://localhost/mbl/pages/adminaccount.php?page=cities");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
     } else if ($_POST["action"] == "editcity") {
         $days = array();
         for ($i = 0; $i <= 6; $i++) {
@@ -44,9 +44,9 @@ try {
             }
         }
         CommandManager::deleteDayFromAll($bdd, $days, false, $_POST["city"]);
-        header("Location: http://localhost/mbl/pages/adminaccount.php?page=cities");
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
     }
 } catch (Exception $e) {
-    header("Location: http://localhost/mbl/pages/adminaccount.php");
+    header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
     exit();
 }

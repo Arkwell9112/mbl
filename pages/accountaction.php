@@ -27,10 +27,10 @@ try {
         }
         CommandManager::editCommand($bdd, $_POST["product"], $amounts, $username);
     }
-    header("Location: http://localhost/mbl/pages/account.php");
+    header("Location: https://monboulangerlivreur.fr/pages/account.php");
 } catch (MBLException $e) {
     $status = $e->getMessage();
-    header("Location: http://localhost/mbl/pages/account.php?status=$status");
+    header("Location: https://monboulangerlivreur.fr/pages/account.php?status=$status");
 } catch (Exception $e) {
-    header("Location: http://localhost/mbl/pages/account.php");
+    header("Location: https://monboulangerlivreur.fr/pages/account.php");
 }

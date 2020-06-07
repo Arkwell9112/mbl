@@ -28,7 +28,7 @@ try {
 if (isset($bdd) && isset($_COOKIE["token"])) {
     try {
         ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
-        header("Location: http://localhost/mbl/pages/account.php");
+        header("Location: https://monboulangerlivreur.fr/pages/account.php");
     } catch (Exception $e) {
 
     }
