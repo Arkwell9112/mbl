@@ -7,5 +7,5 @@ try {
     AccountManager::activeAccount($bdd, $_GET["token"]);
     header("Location: https://monboulangerlivreur.fr/pages/signin.php?status=yesactive");
 } catch (Exception $e) {
-    header("Location: https://monboulangerlivreur.fr/pages/signin.php.status=badtoken");
+    header("Location: https://monboulangerlivreur.fr/pages/signin.php?status=badtoken");
 }
