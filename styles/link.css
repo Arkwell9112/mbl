@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+img
+{
+    display: block;
+    width: 15vw;
+    margin: 5vw auto auto auto;
+}
+
+p
+{
+    font-family: worksans;
+    font-size: 2vw;
+    margin-top: 2vw;
+    text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+    img
+    {
+        width: 25vw;
+    }
+
+    p
+    {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    p
+    {
+        margin-top: 4vw;
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    img
+    {
+        width: 35vw;
+    }
+
+    p
+    {
+        margin-top: 6vw;
+        font-size: 6vw;
+    }
+}

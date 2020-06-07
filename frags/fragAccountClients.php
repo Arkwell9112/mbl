@@ -3,7 +3,7 @@
         <img src="../imgs/datas.svg">
         <h3>Clients</h3>
     </div>
-    <div id="tablecontainment">
+    <div id="tablecontainment" class="tablecontain">
         <table>
             <thead>
             <tr>

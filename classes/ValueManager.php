@@ -2,7 +2,7 @@
 
 class ValueManager
 {
-    public static function editValue(PDO $bdd, float $amount, String $username, array $content, String $secret)
+    public static function editValue(PDO $bdd, float $amount, String $username, array $content, String $secret, bool $delivering = false)
     {
         $request = $bdd->prepare("LOCK TABLES users WRITE");
         $request->execute();
@@ -11,7 +11,7 @@ class ValueManager
             "username" => $username
         ));
         $result = $request->fetchAll();
-        if ($amount < 0 && $result[0]["value"] < $amount) {
+        if ($amount < 0 && $result[0]["value"] < -$amount) {
             $request = $bdd->prepare("UNLOCK TABLES");
             $request->execute();
             throw new MBLException("badamount");
@@ -30,6 +30,12 @@ class ValueManager
                     "content" => json_encode($content),
                     "creationdate" => time()
                 ));
+                if ($delivering) {
+                    $request = $bdd->prepare("UPDATE users SET delivered=1 WHERE username=:username");
+                    $request->execute(array(
+                        "username" => $username
+                    ));
+                }
                 $bdd->commit();
             } catch (Exception $e) {
                 $bdd->rollBack();

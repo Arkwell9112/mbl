@@ -55,7 +55,7 @@ class CommandManager
                 $command[$product] = array();
             }
             for ($i = 0; $i <= 6; $i++) {
-                if ($result[0][$i . "delivery"]) {
+                if ($result[0][$i . "delivery"] != "0") {
                     $command[$product][$i] = $amounts[$i];
                 } else {
                     $command[$product][$i] = 0;
@@ -205,7 +205,7 @@ class CommandManager
             foreach ($result as $user) {
                 $command = json_decode($user["command"], true);
                 for ($i = 0; $i <= 6; $i++) {
-                    if($days[$i] == 0) {
+                    if($days[$i] == "0") {
                         foreach ($command as $key => $product) {
                             $command[$key][$i] = 0;
                         }

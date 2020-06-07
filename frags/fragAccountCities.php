@@ -3,7 +3,7 @@
         <img src="../imgs/softbread.svg">
         <h3>Produits</h3>
     </div>
-    <div id="tablecontainment1">
+    <div id="tablecontainment1" class="tablecontain">
         <table>
             <thead>
                 <tr>
@@ -37,7 +37,7 @@
         <img src="../imgs/delivery.svg">
         <h3>Villages</h3>
     </div>
-    <div id="tablecontainment2">
+    <div id="tablecontainment2" class="tablecontain">
         <table>
             <thead>
             <tr>

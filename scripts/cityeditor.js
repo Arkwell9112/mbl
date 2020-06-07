@@ -30,7 +30,7 @@ function editproduct(e) {
         let row = e.target.parentElement.parentElement;
         let cells = row.getElementsByTagName("td");
         cells[0].innerHTML = cells[0].innerHTML + "<input type='hidden' name='product' value='" + cells[0].innerHTML + "'>" + "<input type='hidden' name='action' value='editproduct'>";
-        cells[1].innerHTML = "<input type='text' name='price' value='" + cells[1].innerHTML + "'>";
+        cells[1].innerHTML = "<input size='2' type='text' name='price' value='" + cells[1].innerHTML + "'>";
         cells[2].innerHTML = "<input class='editbutton' type='submit' value='Valider'>";
         let tablediv = document.getElementById("tablecontainment1");
         tablediv.innerHTML = "<form action='adminaccountaction.php' method='post'>" + tablediv.innerHTML + "</form>";

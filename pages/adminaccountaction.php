@@ -39,11 +39,6 @@ try {
         for ($i = 0; $i <= 6; $i++) {
             if (isset($_POST[$i])) {
                 $days[$i] = $_POST[$i];
-                if ($days[$i] > 1) {
-                    $days[$i] = 1;
-                } else if ($days[$i] < 0) {
-                    $days[$i] = 0;
-                }
             } else {
                 $days[$i] = 0;
             }

@@ -5,7 +5,7 @@ include("../classes/WeekDay.php");
 
 $toadd = "";
 
-if(isset($_GET["status"])) {
+if (isset($_GET["status"])) {
     $status = $_GET["status"];
 } else {
     $status = "";
@@ -18,7 +18,7 @@ if (!isset($_COOKIE["token"])) {
 try {
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
-    if(PDOManager::checkAdmin($username)) {
+    if (PDOManager::checkAdmin($username)) {
         header("Location: http://localhost/mbl/pages/adminaccount.php");
         exit();
     }
@@ -44,7 +44,7 @@ try {
     $products = json_encode($result4);
     $request = $bdd->prepare("SELECT * FROM operations WHERE username=:username");
     $request->execute(array(
-            "username" => $username
+        "username" => $username
     ));
     $result5 = $request->fetchAll();
 } catch (Exception $e) {
@@ -66,11 +66,11 @@ include("../frags/fragHeader.php");
 <article id="firstarticle">
     <?php echo "<input type='hidden' name='products' id='products' value='$products'>"; ?>
     <div class="title">
-        <img src="../imgs/deliverytime.svg">
+        <img src="../imgs/delivery.svg">
         <h3>Mes livraisons</h3>
     </div>
-    <div id="tablecontainment">
-        <?php if(preg_match("#24h#", $status)) include("../frags/fragErrorProducts.php") ?>
+    <div id="tablecontainment" class="tablecontain">
+        <?php if (preg_match("#24h#", $status)) include("../frags/fragErrorProducts.php") ?>
         <table>
             <thead>
             <tr>
@@ -94,7 +94,7 @@ include("../frags/fragHeader.php");
                 $row = "<td>$key</td>";
                 for ($i = 0; $i <= 6; $i++) {
                     $value2 = $value[$i];
-                    if ($result3[0][$i . "delivery"]) {
+                    if ($result3[0][$i . "delivery"] != "0") {
                         $row = $row . "<td>$value2</td>";
                     } else {
                         $row = $row . "<td>Non livré</td>";
@@ -116,12 +116,49 @@ include("../frags/fragHeader.php");
 </article>
 <article>
     <div class="title">
+        <img src="../imgs/deliverytime.svg">
+        <h3>Les horaires de livraison dans mon village</h3>
+    </div>
+    <div class="tablecontain">
+        <table>
+            <thead>
+            <tr>
+                <th>Lundi</th>
+                <th>Mardi</th>
+                <th>Mercredi</th>
+                <th>Jeudi</th>
+                <th>Vendredi</th>
+                <th>Samedi</th>
+                <th>Dimanche</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <?php
+                for ($i = 1; $i <= count($result3[0]) / 2 - 1; $i++) {
+                    if($result3[0][$i] == "0") {
+                        echo "<td>Non livré</td>";
+                    } else {
+                        $day = $result3[0][$i];
+                        echo "<td>$day</td>";
+                    }
+                }
+                ?>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</article>
+<article>
+    <div class="title">
         <img id="wallet" src="../imgs/money.svg">
         <h3>Mon solde</h3>
     </div>
     <p>
-        Vous disposez de <span id="money"><?php echo $result[0]["value"] ?>€</span> sur votre compte boulanger.<br><br><br>
-        Rechargez ! (cliquez sur la somme souhaitée) :<br> <a href="tostripe.php?value=20">20 €</a> <a href="tostripe.php?value=40">40 €</a> <a href="tostripe.php?value=60">60 €</a>
+        Vous disposez de <span id="money"><?php echo $result[0]["value"] ?>€</span> sur votre compte
+        boulanger.<br><br><br>
+        Rechargez ! (cliquez sur la somme souhaitée) :<br> <a href="tostripe.php?value=20">20 €</a> <a
+                href="tostripe.php?value=40">40 €</a> <a href="tostripe.php?value=60">60 €</a>
     </p>
 </article>
 <article>
@@ -146,11 +183,11 @@ include("../frags/fragHeader.php");
     <div>
         <table>
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Contenu</th>
-                    <th>Date</th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th>Contenu</th>
+                <th>Date</th>
+            </tr>
             </thead>
             <tbody>
             <?php
@@ -169,7 +206,7 @@ include("../frags/fragHeader.php");
                 echo "<td>$date</td>";
                 echo "</tr>";
             }
-            if(count($result5) == 0) {
+            if (count($result5) == 0) {
                 echo "<tr><td colspan='3'>Aucune opération sur votre compte pour le moment.</td></tr>";
             }
             ?>

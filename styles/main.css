@@ -293,6 +293,16 @@ article ul
         margin-top: 7vw;
     }
 
+    #secondnav
+    {
+        font-size: 3vw;
+    }
+
+    #oncearticle
+    {
+        margin-top: 15vw;
+    }
+
     #firstarticle
     {
         margin-top: 8vw;
@@ -348,12 +358,7 @@ article ul
         margin-bottom: 2vw;
     }
 
-    #tablecontainment
-    {
-        overflow: scroll;
-    }
-
-    #tablecontainment1
+    .tablecontain
     {
         overflow: scroll;
     }
@@ -391,6 +396,16 @@ article ul
     #firstarticle
     {
         margin-top: 8vw;
+    }
+
+    #secondnav
+    {
+        font-size: 4vw;
+    }
+
+    #oncearticle
+    {
+        margin-top: 18vw;
     }
 
     article .title
@@ -465,12 +480,7 @@ article ul
         margin-top: 5vw;
     }
 
-    #tablecontainment
-    {
-        overflow: scroll;
-    }
-
-    #tablecontainment1
+    .tablecontain
     {
         overflow: scroll;
     }
@@ -513,6 +523,16 @@ article ul
     #firstarticle
     {
         margin-top: 8vw;
+    }
+
+    #secondnav
+    {
+        font-size: 4vw;
+    }
+
+    #oncearticle
+    {
+        margin-top: 18vw;
     }
 
     article .title
@@ -589,12 +609,7 @@ article ul
         margin-top: 5vw;
     }
 
-    #tablecontainment
-    {
-        overflow: scroll;
-    }
-
-    #tablecontainment1
+    .tablecontain
     {
         overflow: scroll;
     }
