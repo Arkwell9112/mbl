@@ -88,7 +88,7 @@ class AccountManager
                 "X-Mailer" => "PHP/" . phpversion()
             );
             $subject = "Activation de votre compte MonBoulangerLivreur.fr";
-            $message = file_get_contents("../frags/fragMailActivation.html", true);
+            $message = file_get_contents("../frags/fragMailActivation.html", false);
             $message = wordwrap($message, 70, "\r\n");
             mail($mail, $subject, $message, $header);
             $bdd->commit();

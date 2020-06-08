@@ -5,7 +5,7 @@ include("../classes/PDOManager.php");
 try {
     $bdd = PDOManager::getPDO();
     $token = ConnectionManager::connectWithPasswd($bdd, $_POST["username"], $_POST["passwd"]);
-    setcookie("token", $token, time() + ConnectionManager::connectionTime, "/", "localhost", false, true);
+    setcookie("token", $token, time() + ConnectionManager::connectionTime, "/", "monboulangerlivreur.fr", true, true);
     if (isset($_POST["backtrace"])) {
         $backtrace = $_POST["backtrace"];
         header("Location: https://monboulangerlivreur.fr/pages/link.php?token=$backtrace");
