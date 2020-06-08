@@ -6,7 +6,7 @@ class PDOManager
     private const username = "admin";
     private const passwd = "LilPump9112Zero";
     private const dsn = "mysql:host=localhost;port=3306;dbname=mbl";
-    private const admins = "Edouard";
+    private const admins = "";
 
     public static function getPDO(): PDO
     {

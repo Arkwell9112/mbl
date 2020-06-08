@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="monboulangerlivreur.fr" id="32b83cb1-ff06-4907-9266-f466bf500df2" port="22" customName="MBL" nameFormat="CUSTOM" username="debian" />
+    </configs>
+  </component>
+</project>

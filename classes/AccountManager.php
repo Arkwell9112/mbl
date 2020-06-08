@@ -88,7 +88,9 @@ class AccountManager
                 "X-Mailer" => "PHP/" . phpversion()
             );
             $subject = "Activation de votre compte MonBoulangerLivreur.fr";
-            $message = file_get_contents("../frags/fragMailActivation.html", false);
+            $message = file_get_contents("../frags/fragMailActivation+.html", false);
+            $message = str_replace("&amp;username&amp;", $username, $message);
+            $message = str_replace("+token+", $verificationid, $message);
             $message = wordwrap($message, 70, "\r\n");
             mail($mail, $subject, $message, $header);
             $bdd->commit();
@@ -106,6 +108,7 @@ class AccountManager
         ));
         $result = $request->fetchAll();
         if (count($result) == 1) {
+            $mail = $result[0]["mail"];
             $currentid = IDManager::getOwnID($bdd, $username) . $result[0]["safeid"];
             $token = password_hash($currentid, PASSWORD_DEFAULT);
             $request = $bdd->prepare("SELECT * FROM resets WHERE username=:username");
@@ -127,8 +130,19 @@ class AccountManager
                     "token" => $token,
                     "creationdate" => time()
                 ));
-                //Add mail sending
             }
+            $header = array(
+                "MIME-Version" => "1.0",
+                "Content-type" => "text/html; charset=UTF-8",
+                "From" => "MonBoulangerLivreur.fr <no-reply@monboulangerlivreur.fr>",
+                "Reply-To" => "contact@monboulangerlivreur.fr",
+                "X-Mailer" => "PHP/". phpversion()
+            );
+            $subject = "Réinitialisation de votre mot de passe";
+            $message = file_get_contents("../frags/fragMailReset.html");
+            $message = str_replace("+token+", $token, $message);
+            $message = wordwrap($message, 70, "\r\n");
+            mail($mail, $subject, $message, $header);
         } else {
             throw new MBLException("badusername");
         }

@@ -100,9 +100,9 @@ if ($isadmin) {
 <body>
 <?php
 if (!$isadmin || $amount == "yes") {
-    echo "<img src='../imgs/tick.svg'>";
+    echo "<img id='validator' src='../imgs/tick.svg'>";
 } else {
-    echo "<img src='../imgs/cross.svg'>";
+    echo "<img id='validator' src='../imgs/cross.svg'>";
 }
 ?>
 <p>
