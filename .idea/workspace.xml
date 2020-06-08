@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41d118f0-4a04-4fb9-a187-d37c5e79e604" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/PDOManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/PDOManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/activeaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/activeaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AccountManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AccountManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +58,13 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\mbl\imgs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\mbl\imgs" />
       <recent name="C:\wamp64\www\mbl\styles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\mbl\frags" />
+      <recent name="C:\wamp64\www\mbl\imgs" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -145,6 +147,7 @@
       <workItem from="1591533290710" duration="218000" />
       <workItem from="1591561617339" duration="967000" />
       <workItem from="1591562696202" duration="81000" />
+      <workItem from="1591594305484" duration="2066000" />
     </task>
     <servers />
   </component>
@@ -152,6 +155,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="72" key="#Deployment" timestamp="1591594469858">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="72" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1591594469858" />
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog" timestamp="1591594519249">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1591594519249" />
     <state x="595" y="228" key="NewPhpClassDialog" timestamp="1591367975472">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -164,14 +175,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590668198867" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1591562698660">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1591594306659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591562698660" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591594306659" />
     <state x="0" y="0" width="740" height="824" key="find.popup" timestamp="1591533481849">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" width="740" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1591533481849" />
+    <state x="654" y="144" key="ftp.server.browser" timestamp="1591594401663">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="654" y="144" key="ftp.server.browser/0.0.1536.824@0.0.1536.824" timestamp="1591594401663" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590759271384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

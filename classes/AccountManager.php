@@ -80,7 +80,17 @@ class AccountManager
                 "creationdate" => time(),
                 "mail" => $mail
             ));
-            //Add Mail verification needed !
+            $header = array(
+                "MIME-Version" => "1.0",
+                "Content-type" => "text/html; charset=UTF-8",
+                "From" => "MonBoulangerLivreur.fr <no-reply@monboulangerlivreur.fr>",
+                "Reply-To" => "contact@monboulangerlivreur.fr",
+                "X-Mailer" => "PHP/" . phpversion()
+            );
+            $subject = "Activation de votre compte MonBoulangerLivreur.fr";
+            $message = file_get_contents("../frags/fragMailActivation.html", true);
+            $message = wordwrap($message, 70, "\r\n");
+            mail($mail, $subject, $message, $header);
             $bdd->commit();
         } catch (Exception $e) {
             $bdd->rollBack();
