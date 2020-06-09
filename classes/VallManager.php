@@ -1,8 +1,8 @@
 <?php
 
-class ValueManager
+class VallManager
 {
-    public static function editValue(PDO $bdd, float $amount, String $username, array $content, String $secret, bool $delivering = false)
+    public static function editValue(PDO $bdd, float $amount, string $username, array $content, string $secret, bool $delivering = false)
     {
         $request = $bdd->prepare("LOCK TABLES users WRITE");
         $request->execute();
@@ -24,11 +24,12 @@ class ValueManager
                     "username" => $username,
                     "value" => $value
                 ));
-                $request = $bdd->prepare("INSERT INTO operations (id, username, content, creationdate) VALUES (0, :username, :content, :creationdate)");
+                $request = $bdd->prepare("INSERT INTO operations (id, username, content, creationdate, secret) VALUES (0, :username, :content, :creationdate, :secret)");
                 $request->execute(array(
                     "username" => $username,
                     "content" => json_encode($content),
-                    "creationdate" => time()
+                    "creationdate" => time(),
+                    "secret" => $secret
                 ));
                 if ($delivering) {
                     $request = $bdd->prepare("UPDATE users SET delivered=1 WHERE username=:username");

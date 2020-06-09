@@ -6,7 +6,7 @@ class ConnectionManager
 {
     public const connectionTime = 3600 * 24 * 3;
 
-    public static function connectWithPasswd(PDO $bdd, String $username, String $passwd): String
+    public static function connectWithPasswd(PDO $bdd, string $username, string $passwd): string
     {
         $request = $bdd->prepare("SELECT username,hashword,safeid,active FROM accounts WHERE username=:username");
         $request->execute(array(
@@ -50,7 +50,7 @@ class ConnectionManager
         }
     }
 
-    public static function connectWithToken(PDO $bdd, String $token): String
+    public static function connectWithToken(PDO $bdd, string $token): string
     {
         $request = $bdd->prepare("SELECT * FROM connections WHERE token=:token");
         $request->execute(array(
@@ -74,7 +74,7 @@ class ConnectionManager
         }
     }
 
-    public static function disconnectWithToken(PDO $bdd, String $token)
+    public static function disconnectWithToken(PDO $bdd, string $token)
     {
         $request = $bdd->prepare("SELECT * FROM connections WHERE token=:token");
         $request->execute(array(

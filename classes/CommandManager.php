@@ -3,7 +3,7 @@ include("../classes/WeekDay.php");
 
 class CommandManager
 {
-    public static function editCommand(PDO $bdd, String $product, array $amounts, String $username)
+    public static function editCommand(PDO $bdd, string $product, array $amounts, string $username)
     {
         $goods = 0;
         for ($i = 0; $i <= 6; $i++) {
@@ -80,7 +80,7 @@ class CommandManager
         }
     }
 
-    public static function updateValue(PDO $bdd, array $command, String $username)
+    public static function updateValue(PDO $bdd, array $command, string $username)
     {
         $value = array(0, 0, 0, 0, 0, 0, 0);
         foreach ($command as $key => $item) {
@@ -103,7 +103,7 @@ class CommandManager
         }
     }
 
-    public static function deleteProductFromAll(PDO $bdd, String $product)
+    public static function deleteProductFromAll(PDO $bdd, string $product)
     {
         $request = $bdd->prepare("SELECT * FROM users");
         $request->execute();
@@ -128,7 +128,7 @@ class CommandManager
         }
     }
 
-    public static function deleteProduct(PDO $bdd, String $product, String $username, bool $errored)
+    public static function deleteProduct(PDO $bdd, string $product, string $username, bool $errored)
     {
         $request = $bdd->prepare("SELECT command FROM users WHERE username=:username");
         $request->execute(array(
@@ -158,7 +158,7 @@ class CommandManager
         }
     }
 
-    public static function updateValueFromAll(PDO $bdd, String $product, float $price)
+    public static function updateValueFromAll(PDO $bdd, string $product, float $price)
     {
         $request = $bdd->prepare("SELECT * FROM users");
         $request->execute();
@@ -185,7 +185,7 @@ class CommandManager
         }
     }
 
-    public static function addProduct(PDO $bdd, String $product)
+    public static function addProduct(PDO $bdd, string $product)
     {
         $request = $bdd->prepare("INSERT INTO products VALUES(:name, 0)");
         $request->execute(array(
@@ -193,7 +193,7 @@ class CommandManager
         ));
     }
 
-    public static function deleteDayFromAll(PDO $bdd, array $days, bool $new, String $name)
+    public static function deleteDayFromAll(PDO $bdd, array $days, bool $new, string $name)
     {
         $request = $bdd->prepare("SELECT * FROM users WHERE city=:city");
         $request->execute(array(

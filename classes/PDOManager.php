@@ -15,7 +15,7 @@ class PDOManager
         return $bdd;
     }
 
-    public static function checkAdmin(String $isadmin): bool
+    public static function checkAdmin(string $isadmin): bool
     {
         if (preg_match("#^$isadmin$#", self::admins)) {
             return true;

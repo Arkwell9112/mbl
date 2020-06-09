@@ -1,6 +1,6 @@
 <?php
 include("../classes/PDOManager.php");
-include("../classes/ValueManager.php");
+include("../classes/VallManager.php");
 include("../classes/ConnectionManager.php");
 include("../classes/CommandManager.php");
 
@@ -19,7 +19,7 @@ try {
                 "Montant" => $_POST["amount"]
             )
         );
-        ValueManager::editValue($bdd, $_POST["amount"], $_POST["username"], $content, "");
+        VallManager::editValue($bdd, $_POST["amount"], $_POST["username"], $content, "");
         header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
     } else if ($_POST["action"] == "deleteproduct") {
         CommandManager::deleteProductFromAll($bdd, $_POST["product"]);

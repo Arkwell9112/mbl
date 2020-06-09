@@ -3,7 +3,7 @@
 
 class LinkManager
 {
-    public static function checkLink(PDO $bdd, String $token): String
+    public static function checkLink(PDO $bdd, string $token): string
     {
         $request = $bdd->prepare("SELECT * FROM links WHERE token=:token");
         $request->execute(array(
@@ -21,7 +21,7 @@ class LinkManager
         }
     }
 
-    public static function makeLink(PDO $bdd, String $token, String $username)
+    public static function makeLink(PDO $bdd, string $token, string $username)
     {
         $request = $bdd->prepare("SELECT * FROM links WHERE token=:token");
         $request->execute(array(

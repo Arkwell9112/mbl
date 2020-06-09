@@ -2,7 +2,7 @@
 include("../classes/LinkManager.php");
 include("../classes/PDOManager.php");
 include("../classes/ConnectionManager.php");
-include("../classes/ValueManager.php");
+include("../classes/VallManager.php");
 include("../classes/WeekDay.php");
 
 $isadmin = false;
@@ -33,6 +33,7 @@ try {
             if (isset($_COOKIE["token"])) {
                 $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
                 LinkManager::makeLink($bdd, $_GET["token"], $username);
+                $linkeduser = LinkManager::checkLink($bdd, $_GET["token"]);
                 header("Refresh:0");
                 exit();
             } else {
@@ -71,7 +72,7 @@ if ($isadmin) {
             "content" => $products
         );
         if ($result[0]["delivered"] == 0) {
-            ValueManager::editValue($bdd, -$result[0][WeekDay::getDay() . "value"], $linkeduser, $content, "", true);
+            VallManager::editValue($bdd, -$result[0][WeekDay::getDay() . "value"], $linkeduser, $content, "", true);
             $amount = "yes";
         } else {
             $amount = "yes";

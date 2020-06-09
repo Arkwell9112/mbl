@@ -25,7 +25,7 @@ class IDManager
         return $id;
     }
 
-    public static function getOwnID(PDO $bdd, String $username): int
+    public static function getOwnID(PDO $bdd, string $username): int
     {
         $request = $bdd->prepare("LOCK TABLES accounts WRITE");
         $request->execute();

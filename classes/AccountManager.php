@@ -6,7 +6,7 @@ class AccountManager
 {
     public const resetTime = 2 * 3600;
 
-    public static function createAccount(PDO $bdd, String $username, String $passwd, String $passwd2, String $mail, String $phone, String $city)
+    public static function createAccount(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city)
     {
         $request = $bdd->prepare("SELECT username FROM accounts WHERE username=:name");
         $request->execute(array(
@@ -100,7 +100,7 @@ class AccountManager
         }
     }
 
-    public static function setPasswdReset(PDO $bdd, String $username)
+    public static function setPasswdReset(PDO $bdd, string $username)
     {
         $request = $bdd->prepare("SELECT * FROM accounts WHERE username=:username");
         $request->execute(array(
@@ -136,7 +136,7 @@ class AccountManager
                 "Content-type" => "text/html; charset=UTF-8",
                 "From" => "MonBoulangerLivreur.fr <no-reply@monboulangerlivreur.fr>",
                 "Reply-To" => "contact@monboulangerlivreur.fr",
-                "X-Mailer" => "PHP/". phpversion()
+                "X-Mailer" => "PHP/" . phpversion()
             );
             $subject = "Réinitialisation de votre mot de passe";
             $message = file_get_contents("../frags/fragMailReset.html");
@@ -148,7 +148,7 @@ class AccountManager
         }
     }
 
-    public static function resetPasswd(PDO $bdd, String $token, String $passwd, String $passwd2)
+    public static function resetPasswd(PDO $bdd, string $token, string $passwd, string $passwd2)
     {
         if ($passwd == $passwd2) {
             if (strlen($passwd) < 8 || !preg_match("#[0-9]#", $passwd) || !preg_match("#[A-Z]#", $passwd) || !preg_match("#[a-z]#", $passwd) || !preg_match("#[^A-Za-z0-9]#", $passwd)) {
@@ -188,7 +188,7 @@ class AccountManager
         }
     }
 
-    public static function activeAccount(PDO $bdd, String $verificationid)
+    public static function activeAccount(PDO $bdd, string $verificationid)
     {
         $request = $bdd->prepare("SELECT username FROM accounts WHERE verificationid=:id");
         $request->execute(array(
