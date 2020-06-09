@@ -1,6 +1,6 @@
 <?php
-include("../classes/PDOManager.php");
-include("../classes/ConnectionManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/ConnectionManager.php");
 
 $firstfield = "Se connecter";
 $firstref = "../pages/signin.php";

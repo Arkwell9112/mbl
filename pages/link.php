@@ -1,9 +1,9 @@
 <?php
-include("../classes/LinkManager.php");
-include("../classes/PDOManager.php");
-include("../classes/ConnectionManager.php");
-include("../classes/VallManager.php");
-include("../classes/WeekDay.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/LinkManager.php");
+require_once("../classes/ConnectionManager.php");
+require_once("../classes/VallManager.php");
+require_once("../classes/WeekDay.php");
 
 $isadmin = false;
 $amount = "not";

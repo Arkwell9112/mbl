@@ -4,16 +4,16 @@ use Stripe\Checkout\Session;
 use Stripe\Stripe;
 
 require("/var/www/mbl/vendor/autoload.php");
-require("../classes/PDOManager.php");
-require("../classes/ConnectionManager.php");
-require("../classes/PayyManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/ConnectionManager.php");
+require_once("../classes/PayyManager.php");
 
 if (isset($_GET["value"])) {
     if ($_GET["value"] == 20) {
         $amount = 20;
         $price = "price_1GrnTNHQXmOPYXA5okAzbWEV";
     } else if ($_GET["value"] == 40) {
-        $amount = 20;
+        $amount = 40;
         $price = "price_1Gs12dHQXmOPYXA5MVM4FSW3";
     } else if ($_GET["value"] == 60) {
         $amount = 60;

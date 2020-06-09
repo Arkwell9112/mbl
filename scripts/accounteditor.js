@@ -55,5 +55,6 @@ function editproduct(e) {
         let tablediv = document.getElementById("tablecontainment");
         tablediv.innerHTML = "<form action='accountaction.php' method='post'>" + tablediv.innerHTML + "</form>";
         using = true;
+        $(".deleter").remove();
     }
 }

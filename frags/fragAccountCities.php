@@ -23,7 +23,7 @@
                 echo "<td>$name</td>";
                 $price = $product["price"];
                 echo "<td>$price</td>";
-                echo "<td><span class='editbutton editorbutton'>Modifier </span><br><br><form action='adminaccountaction.php' method='post'><input type='hidden' name='action' value='deleteproduct'><input type='hidden' name='product' value='$name'><input class='editbutton' type='submit' value='Supprimer'></form></td>";
+                echo "<td><span class='editbutton editorbutton'>Modifier </span><br><br><form action='adminaccountaction.php' method='post'><input class='deleter' type='hidden' name='action' value='deleteproduct'><input class='deleter' type='hidden' name='product' value='$name'><input class='editbutton' type='submit' value='Supprimer'></form></td>";
                 echo "</tr>";
             }
             echo "<tr><td colspan='3' id='addcell'><span id='addbutton' class='editbutton'>Ajouter un produit</span></td></tr>"

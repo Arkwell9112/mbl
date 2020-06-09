@@ -1,6 +1,7 @@
 <?php
-include("MBLException.php");
-include("IDManager.php");
+require_once("../classes/IDManager.php");
+require_once("../classes/MBLException.php");
+
 
 class AccountManager
 {

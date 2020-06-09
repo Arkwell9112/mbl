@@ -5,9 +5,8 @@ use Stripe\Stripe;
 use Stripe\Webhook;
 
 require("/var/www/mbl/vendor/autoload.php");
-include("../classes/MBLException.php");
-include("../classes/PayyManager.php");
-include("../classes/PDOManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/PayyManager.php");
 
 Stripe::setApiKey('sk_test_51Grjv6HQXmOPYXA5HCeZONczTbtuCTNFJBpqC3wvjb9ksXEpuv0hXoIXLD6sSXYZHUNZ4wiSLknC8mvH6b925Fje00WEBL44ua');
 

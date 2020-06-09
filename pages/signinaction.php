@@ -1,6 +1,6 @@
 <?php
-include("../classes/ConnectionManager.php");
-include("../classes/PDOManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/ConnectionManager.php");
 
 try {
     $bdd = PDOManager::getPDO();

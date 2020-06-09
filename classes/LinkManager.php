@@ -1,5 +1,5 @@
 <?php
-
+require_once("../classes/MBLException.php");
 
 class LinkManager
 {

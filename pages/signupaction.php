@@ -1,6 +1,7 @@
 <?php
-include("../classes/AccountManager.php");
-include("../classes/PDOManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/AccountManager.php");
+
 try {
     AccountManager::createAccount(PDOManager::getPDO(), $_POST["username"], $_POST["passwd1"], $_POST["passwd2"], $_POST["mail"], $_POST["phone"], $_POST["city"]);
     header("Location: https://monboulangerlivreur.fr/pages/signup.php?status=yes");

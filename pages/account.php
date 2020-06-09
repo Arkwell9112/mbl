@@ -1,7 +1,6 @@
 <?php
-include("../classes/PDOManager.php");
-include("../classes/ConnectionManager.php");
-include("../classes/WeekDay.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/ConnectionManager.php");
 
 $toadd = "";
 
@@ -100,8 +99,8 @@ include("../frags/fragHeader.php");
                         $row = $row . "<td>Non livré</td>";
                     }
                 }
-                $row = $row . "<td><span class='editbutton editorbutton'>Modifier </span><br><br><form action='accountaction.php' method='post'><input type='hidden' name='action' value='delete'>
-                <input type='hidden' name='product' value='$key'>
+                $row = $row . "<td><span class='editbutton editorbutton'>Modifier </span><br><br><form action='accountaction.php' method='post'><input class='deleter' type='hidden' name='action' value='delete'>
+                <input class='deleter' type='hidden' name='product' value='$key'>
                 <input class='editbutton' type='submit' value='Supprimer'>
                 </form></td>";
                 echo "<tr>" . $row . "</tr>";

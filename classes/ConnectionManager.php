@@ -1,6 +1,7 @@
 <?php
-include("../classes/IDManager.php");
-include("../classes/MBLException.php");
+require_once("../classes/MBLException.php");
+require_once("../classes/IDManager.php");
+
 
 class ConnectionManager
 {

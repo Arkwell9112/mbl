@@ -1,5 +1,7 @@
 <?php
-include("../classes/WeekDay.php");
+require_once("../classes/WeekDay.php");
+require_once("../classes/MBLException.php");
+
 
 class CommandManager
 {
@@ -204,6 +206,9 @@ class CommandManager
             $bdd->beginTransaction();
             foreach ($result as $user) {
                 $command = json_decode($user["command"], true);
+                if (!isset($command)) {
+                    $command = array();
+                }
                 for ($i = 0; $i <= 6; $i++) {
                     if ($days[$i] == "0") {
                         foreach ($command as $key => $product) {

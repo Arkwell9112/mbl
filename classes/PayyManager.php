@@ -1,5 +1,6 @@
 <?php
-include("../classes/VallManager.php");
+require_once("../classes/MBLException.php");
+require_once("../classes/VallManager.php");
 
 class PayyManager
 {
