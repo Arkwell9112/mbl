@@ -30,6 +30,11 @@ function initiation() {
         let delta = window.innerHeight - bottomtitle - footer.offsetHeight;
         delta = delta / 2 - form.offsetHeight / 2;
         form.style.marginTop = delta.toString() + "px";
+        let inputs = document.getElementsByTagName("input");
+        for (let i = 0; i <= inputs.length - 1; i++) {
+            inputs[i].addEventListener("focus", makefocus);
+            inputs[i].addEventListener("blur", undofocus);
+        }
     }
 }
 
@@ -61,4 +66,14 @@ function updateFooter() {
         aligner2.style.left = "-125%";
         aligner3.style.left = "25%";
     }
+}
+
+function makefocus() {
+    let footers = document.getElementsByTagName("footer");
+    footers[0].style.display = "none";
+}
+
+function undofocus() {
+    let footers = document.getElementsByTagName("footer");
+    footers[0].style.display = "block";
 }

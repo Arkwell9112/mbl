@@ -62,7 +62,7 @@ class PayyManager
                 $request = $bdd->prepare("INSERT INTO operations VALUES (0, :username, :content, :secret, :creationdate)");
                 $request->execute(array(
                     "username" => $result[0]["username"],
-                    "content" => $content,
+                    "content" => json_encode($content),
                     "secret" => $sessionid,
                     "creationdate" => time()
                 ));

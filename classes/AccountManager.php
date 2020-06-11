@@ -6,6 +6,7 @@ require_once("../classes/MBLException.php");
 class AccountManager
 {
     public const resetTime = 2 * 3600;
+    public const activeTime = 24 * 3600;
 
     public static function createAccount(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city)
     {
