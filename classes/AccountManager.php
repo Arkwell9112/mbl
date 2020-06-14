@@ -8,7 +8,7 @@ class AccountManager
     public const resetTime = 2 * 3600;
     public const activeTime = 24 * 3600;
 
-    public static function createAccount(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city)
+    public static function checkErrors(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city)
     {
         $request = $bdd->prepare("SELECT username FROM accounts WHERE username=:name");
         $request->execute(array(
@@ -61,13 +61,19 @@ class AccountManager
         if ($error != "") {
             throw new MBLException($error);
         }
+    }
+
+    public static function createAccount(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city, string $address, string $geocode)
+    {
         try {
             $bdd->beginTransaction();
-            $request = $bdd->prepare("INSERT INTO users (username, city, phone) VALUES (:username, :city, :phone)");
+            $request = $bdd->prepare("INSERT INTO users (username, city, phone, address, geocode) VALUES (:username, :city, :phone, :address, :geocode)");
             $request->execute(array(
                 "username" => $username,
                 "city" => $city,
-                "phone" => $phone
+                "phone" => $phone,
+                "address" => $address,
+                "geocode" => $geocode
             ));
             $ownid = random_int(PHP_INT_MIN, PHP_INT_MAX);
             $safeid = IDManager::getSafeID($bdd);

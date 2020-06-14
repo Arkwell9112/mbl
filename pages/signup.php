@@ -60,6 +60,8 @@ include("../frags/fragHeader.php");
             <?php if (preg_match("#badphone#", $status)) include("../frags/fragErrorPhone.php") ?>
             <input value="<?php if (isset($_GET["phone"])) echo $_GET["phone"] ?>" type="tel" name="phone"
                    placeholder="Numéro de téléphone" size="25"><br>
+            <input value="<?php if (isset($_GET["address"])) echo $_GET["address"] ?>" placeholder="N° et nom de rue"
+                   type="text" name="address">
             <?php if (preg_match("#badcity#", $status)) include("../frags/fragErrorCity.php") ?>
             <select class="cityselect" name="city">
                 <option value="none">Sélectionnez votre village de résidence</option>

@@ -170,6 +170,7 @@ include("../frags/fragHeader.php");
             <span class="tounderline">Nom d'utilisateur</span> : <?php echo $result[0]["username"] ?><br><br>
             <span class="tounderline">Adresse e-mail</span> : <?php echo $result2[0]["mail"] ?><br><br>
             <span class="tounderline">Téléphone</span> : <?php echo $result[0]["phone"] ?><br><br>
+            <span class="tounderline">Adresse : </span> <?php $result[0]["address"] ?><br><br>
             <span class="tounderline">Village de résidence</span> : <?php echo $result[0]["city"] ?>
         </p>
     </div>

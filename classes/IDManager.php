@@ -3,6 +3,11 @@
 
 class IDManager
 {
+    public static function getOpenStreetKey(): string
+    {
+        return "e098530851fa8464888351780fd6c7d4";
+    }
+
     public static function getSafeID(PDO $bdd): int
     {
         $request = $bdd->prepare("LOCK TABLES global WRITE");
