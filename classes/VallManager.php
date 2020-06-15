@@ -1,5 +1,5 @@
 <?php
-require_once("../classes/MBLException.php");
+require_once("/var/www/mbl/classes/MBLException.php");
 
 class VallManager
 {

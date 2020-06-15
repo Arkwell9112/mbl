@@ -3,6 +3,7 @@ require_once("/var/www/mbl/classes/PDOManager.php");
 require_once("/var/www/mbl/classes/ConnectionManager.php");
 require_once("/var/www/mbl/classes/AccountManager.php");
 require_once("/var/www/mbl/classes/PayyManager.php");
+require_once("/var/www/mbl/classes/WeekDay.php");
 
 try {
     $bdd = PDOManager::getPDO();
@@ -45,6 +46,68 @@ try {
     foreach ($result as $payment) {
         PayyManager::rejectPayy($bdd, $payment["sessionid"]);
     }
-} catch (Exception $e){
+    $specvalue = WeekDay::getDay() . "value";
+    $request = "SELECT * FROM users WHERE value>=+replace+ AND value!=0 ORDER BY city";
+    $request = str_replace("+replace+", $specvalue, $request);
+    $request = $bdd->prepare($request);
+    $request->execute();
+    $result = $request->fetchAll();
+    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+    $request->execute(array(
+        "value" => count($result) - 1,
+        "label" => "maxcustomer"
+    ));
+    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+    $request->execute(array(
+        "value" => 0,
+        "label" => "currentcustomer"
+    ));
+    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+    $request->execute(array(
+        "value" => json_encode($result),
+        "label" => "inittour"
+    ));
+    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+    $request->execute(array(
+        "value" => json_encode(array()),
+        "label" => "optitour"
+    ));
+    $i = 0;
+    $end = false;
+    while (!$end) {
+        $begin = $i * 1000;
+        if (count($result) - 1 - $begin >= 1000) {
+            $finish = $begin + 999;
+        } else {
+            $finish = count($result) - 1;
+            $end = true;
+        }
+        $ask = "";
+        for ($j = $begin; $j <= $finish; $j++) {
+            if ($j != $finish) {
+                $ask = $ask . $result[$j]["geocode"] . "|";
+            } else {
+                $ask = $ask . $result[$j]["geocode"];
+            }
+        }
+        $points = $finish + 1 - $i * 1000;
+        $openkey = IDManager::getOpenStreetKey();
+        $response = file_get_contents("https://maps.open-street.com/api/tsp/?pts=$ask&nb=$points&mode=driving&unit=s&tour=open&key=$openkey");
+        $request = $bdd->prepare("SELECT value FROM global WHERE label='optitour'");
+        $request->execute();
+        $result2 = $request->fetchAll();
+        $result2 = json_decode($result2[0]["value"], true);
+        $opti = json_decode($response, true);
+        foreach ($opti["OPTIMIZATION"] as $index) {
+            $result2[] = $index;
+        }
+        $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+        $request->execute(array(
+            "value" => json_encode($result2),
+            "label" => "optitour"
+        ));
+        $i++;
+    }
+} catch (Exception $e) {
 
 }
