@@ -64,6 +64,8 @@ if (preg_match("#clients#", $page)) {
     include("../frags/fragAccountCommands.php");
 } else if (preg_match("#tour#", $page)) {
     include("../frags/fragAccountTour.php");
+} else if (preg_match("#force#", $page)) {
+    include("../frags/fragAccountTourForce.php");
 }
 include("../frags/fragFooter.php");
 ?>

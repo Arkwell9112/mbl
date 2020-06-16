@@ -64,7 +64,7 @@ if (preg_match("#validate#", $action)) {
         $products[$key] = $product[WeekDay::getDay()];
     }
     $content = array(
-        "title" => "paiement commande",
+        "title" => "Paiement commande",
         "content" => $products
     );
     try {
@@ -84,7 +84,22 @@ if (preg_match("#validate#", $action)) {
     }
 } else if (preg_match("#bypass#", $action)) {
     try {
-        $request = $bdd->prepare("UPDATE global SET value=value+1 WHERE label='currentcustomer'");
+        $request = $bdd->prepare("LOCK TABLES global WRITE");
+        $request->execute();
+        $request = $bdd->prepare("SELECT value FROM global WHERE label=:label");
+        $request->execute(array(
+            "label" => "passed"
+        ));
+        $passed = $request->fetchAll();
+        $passed = json_decode($passed[0]["value"], true);
+        $passed[] = $currentuser;
+        $passed = json_encode($passed);
+        $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+        $request->execute(array(
+            "value" => $passed,
+            "label" => "passed"
+        ));
+        $request = $bdd->prepare("UNLOCK TABLES");
         $request->execute();
         pp($bdd);
         header("location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=tour");
@@ -137,5 +152,6 @@ if ($currentuser <= $maxcustomer) {
         </form>";
         }
         ?>
+        <a href="adminaccount.php?page=force" class="bottomlink">Liste des clients passées</a>
     </div>
 </article>

@@ -47,7 +47,7 @@ try {
         PayyManager::rejectPayy($bdd, $payment["sessionid"]);
     }
     $specvalue = WeekDay::getDay() . "value";
-    $request = "SELECT * FROM users WHERE value>=+replace+ AND value!=0 ORDER BY city";
+    $request = "SELECT * FROM users WHERE value>=+replace+ AND +replace+!=0 ORDER BY city";
     $request = str_replace("+replace+", $specvalue, $request);
     $request = $bdd->prepare($request);
     $request->execute();
@@ -56,6 +56,11 @@ try {
     $request->execute(array(
         "value" => count($result) - 1,
         "label" => "maxcustomer"
+    ));
+    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+    $request->execute(array(
+        "value" => "[]",
+        "label" => "passed"
     ));
     $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
     $request->execute(array(

@@ -24,11 +24,13 @@ class CommandManager
         ));
         $result = $request->fetchAll();
         $command = json_decode($result[0]["command"], true);
+        /* 24h Avance Check
         if (isset($command[$product])) {
             if ($command[$product][(WeekDay::getDay() + 1) % 7] != $amounts[(WeekDay::getDay() + 1) % 7]) {
                 throw new MBLException("24h");
             }
         }
+        */
         if (isset($command[$product])) {
             if ($command[$product][(WeekDay::getDay()) % 7] != $amounts[(WeekDay::getDay()) % 7]) {
                 throw new MBLException("24h");
