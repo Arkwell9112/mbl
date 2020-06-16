@@ -21,7 +21,7 @@
                 echo "<tr>";
                 $name = $product["name"];
                 echo "<td>$name</td>";
-                $price = $product["price"];
+                $price = number_format($product["price"], 2) . "€";
                 echo "<td>$price</td>";
                 echo "<td><span class='editbutton editorbutton'>Modifier </span><br><br><form action='adminaccountaction.php' method='post'><input class='deleter' type='hidden' name='action' value='deleteproduct'><input class='deleter' type='hidden' name='product' value='$name'><input class='editbutton' type='submit' value='Supprimer'></form></td>";
                 echo "</tr>";

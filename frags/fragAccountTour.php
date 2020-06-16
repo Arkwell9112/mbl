@@ -58,7 +58,7 @@ if (preg_match("#validate#", $action)) {
     $customer = $inittour[$optitour[$currentuser]];
     $command = json_decode($customer["command"], true);
     $products = array(
-            "Montant" => -$customer[WeekDay::getDay() . "value"]
+        "Montant" => number_format(-$customer[WeekDay::getDay() . "value"], 2) . "€"
     );
     foreach ($command as $key => $product) {
         $products[$key] = $product[WeekDay::getDay()];

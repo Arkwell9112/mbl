@@ -52,6 +52,8 @@ include("../frags/fragHeader.php");
                                                 href="adminaccount.php?page=commands">Commandes</a></div>
         <div id="innernav3" class="innernav"><a style="<?php if (preg_match("#cities#", $page)) echo $style ?>"
                                                 href="adminaccount.php?page=cities">Produits & Villages</a></div>
+        <div id="innernav4" class="innernav"><a style="<?php if (preg_match("#tour#", $page)) echo $style ?>"
+                                                href="adminaccount.php?page=tour">Ma tournée</a></div>
     </div>
 <?php
 if (preg_match("#clients#", $page)) {
@@ -60,6 +62,8 @@ if (preg_match("#clients#", $page)) {
     include("../frags/fragAccountCities.php");
 } else if (preg_match("#commands#", $page)) {
     include("../frags/fragAccountCommands.php");
+} else if (preg_match("#tour#", $page)) {
+    include("../frags/fragAccountTour.php");
 }
 include("../frags/fragFooter.php");
 ?>

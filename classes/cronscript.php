@@ -73,7 +73,11 @@ try {
         "label" => "optitour"
     ));
     $i = 0;
-    $end = false;
+    if (count($result) > 0) {
+        $end = false;
+    } else {
+        $end = true;
+    }
     while (!$end) {
         $begin = $i * 1000;
         if (count($result) - 1 - $begin >= 1000) {

@@ -27,7 +27,7 @@ class PayyManager
                 $content = array(
                     "title" => "Rechargement en ligne",
                     "content" => array(
-                        "Montant" => $result[0]["value"]
+                        "Montant" => number_format($result[0]["value"], 2) . "€"
                     )
                 );
                 VallManager::editValue($bdd, $result[0]["value"], $result[0]["username"], $content, $result[0]["sessionid"]);
@@ -56,7 +56,7 @@ class PayyManager
                 $content = array(
                     "title" => "Rechargement en ligne : échec",
                     "content" => array(
-                        "Montant" => $result[0]["value"]
+                        "Montant" => number_format($result[0]["value"], 2) . "€"
                     )
                 );
                 $request = $bdd->prepare("INSERT INTO operations VALUES (0, :username, :content, :secret, :creationdate)");

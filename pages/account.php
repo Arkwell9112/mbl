@@ -40,6 +40,9 @@ try {
     $request = $bdd->prepare("SELECT * FROM products");
     $request->execute();
     $result4 = $request->fetchAll();
+    for ($i = 0; $i <= count($result4) - 1; $i++) {
+        $result4[$i]["price"] = number_format($result4[$i]["price"], 2);
+    }
     $products = json_encode($result4);
     $request = $bdd->prepare("SELECT * FROM operations WHERE username=:username");
     $request->execute(array(
@@ -170,7 +173,7 @@ include("../frags/fragHeader.php");
             <span class="tounderline">Nom d'utilisateur</span> : <?php echo $result[0]["username"] ?><br><br>
             <span class="tounderline">Adresse e-mail</span> : <?php echo $result2[0]["mail"] ?><br><br>
             <span class="tounderline">Téléphone</span> : <?php echo $result[0]["phone"] ?><br><br>
-            <span class="tounderline">Adresse : </span> <?php $result[0]["address"] ?><br><br>
+            <span class="tounderline">Adresse</span> : <?php echo $result[0]["address"] ?><br><br>
             <span class="tounderline">Village de résidence</span> : <?php echo $result[0]["city"] ?>
         </p>
     </div>

@@ -8,7 +8,6 @@ try {
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (!PDOManager::checkAdmin($username)) {
-        throw new MBLException("notadmin");
         header("Location: https://monboulangerlivreur.fr/pages/account.php");
         exit();
     }
@@ -16,7 +15,7 @@ try {
         $content = array(
             "title" => "Opération sur le solde",
             "content" => array(
-                "Montant" => $_POST["amount"]
+                "Montant" => number_format($_POST["amount"], 2) . "€"
             )
         );
         VallManager::editValue($bdd, $_POST["amount"], $_POST["username"], $content, "");
