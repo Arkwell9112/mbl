@@ -1,3 +1,4 @@
+<!-- Fragment pour l'affichage de la page Clients du compte administrateur. -->
 <article id="oncearticle">
     <div class="title">
         <img src="../imgs/datas.svg">
@@ -16,6 +17,7 @@
             </thead>
             <tbody>
             <?php
+            // Affichage de tous les utilisateurs et certaines caractéristiques. Avec le bouton ajouter du solde.
             foreach ($result as $user) {
                 $request = $bdd->prepare("SELECT * FROM accounts WHERE username=:username");
                 $request->execute(array(

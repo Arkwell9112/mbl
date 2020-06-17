@@ -3,11 +3,13 @@
 
 class IDManager
 {
+    // Clé d'API pour open-street.
     public static function getOpenStreetKey(): string
     {
         return "e098530851fa8464888351780fd6c7d4";
     }
 
+    // Permet l'incrémentation automatique des l'ID général. En prévenant les accés concurrents.
     public static function getSafeID(PDO $bdd): int
     {
         $request = $bdd->prepare("LOCK TABLES global WRITE");
@@ -30,6 +32,7 @@ class IDManager
         return $id;
     }
 
+    // Permet l'incrémentation automatique des IDs personnels. Avec prévention des accés concurrents.
     public static function getOwnID(PDO $bdd, string $username): int
     {
         $request = $bdd->prepare("LOCK TABLES accounts WRITE");

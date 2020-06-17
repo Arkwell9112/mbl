@@ -4,6 +4,8 @@ use Stripe\Exception\SignatureVerificationException;
 use Stripe\Stripe;
 use Stripe\Webhook;
 
+// Webhook endpoint pour la validation par stripe des paiements.
+
 require("/var/www/mbl/vendor/autoload.php");
 require_once("../classes/PDOManager.php");
 require_once("../classes/PayyManager.php");
@@ -29,13 +31,16 @@ try {
 }
 
 if ($event->type == 'checkout.session.completed') {
+    // Récupèration de l'objet session pour obtenir l'id.
     $session = $event->data->object;
     $sessionid = $session->id;
 
     try {
+        // On valide le paiement pour cet ID.
         $bdd = PDOManager::getPDO();
         PayyManager::validatePayy($bdd, $sessionid);
     } catch (Exception $e) {
+        // En cas d'erreur on renvoit un code d'erreur et on affiche l'erreur pour pouvoir la consulter via Stripe.
         echo $e->getMessage();
         http_response_code(400);
     }

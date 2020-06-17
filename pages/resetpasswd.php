@@ -6,6 +6,8 @@ $secondref = "../pages/main.php";
 $isnav = true;
 $title = "Réinitialiser votre mot de passe";
 
+// Page pour l'affichage de la réinitialisation de mot de passe.
+
 if (!isset($_GET["token"])) {
     header("Location: https://monboulangerlivreur.fr/pages/main.php");
 }

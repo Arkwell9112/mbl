@@ -1,5 +1,7 @@
 window.addEventListener("load", init);
 
+// Gestion de la redirection vers la page de paiement stripe.
+
 let stripe;
 let sessionid;
 

@@ -4,6 +4,7 @@ require_once("/var/www/mbl/classes/VallManager.php");
 
 class PayyManager
 {
+    // Permet l'insertion d'un nouveau paiement dans payments.
     public static function initPayy(PDO $bdd, string $sessionid, string $username, float $value)
     {
         $request = $bdd->prepare("INSERT INTO payments VALUES (:sessionid, :username, :money, :timing)");
@@ -15,6 +16,7 @@ class PayyManager
         ));
     }
 
+    // Permet la validation d'un paiement. Avec insertion de l'opération et modification de la value de l'utilisateur. Puis supprime le paiement en question.
     public static function validatePayy(PDO $bdd, string $sessionid)
     {
         $request = $bdd->prepare("SELECT * FROM payments WHERE sessionid=:sessionid");
@@ -43,6 +45,7 @@ class PayyManager
         }
     }
 
+    // Permet de rejeter un paiement (Quand non validé depuis plus de 24H). Effectue la suppression et l'insertion de l'opération d'échec.
     public static function rejectPayy(PDO $bdd, string $sessionid)
     {
         $request = $bdd->prepare("SELECT * FROM payments WHERE sessionid=:sessionid");

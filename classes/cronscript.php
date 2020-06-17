@@ -6,6 +6,7 @@ require_once("/var/www/mbl/classes/PayyManager.php");
 require_once("/var/www/mbl/classes/WeekDay.php");
 
 try {
+    // Supprime les resets et connections dont le temps est dépassé.
     $bdd = PDOManager::getPDO();
     $request = $bdd->prepare("DELETE FROM resets WHERE creationdate<=:specialdate");
     $request->execute(array(
@@ -16,6 +17,7 @@ try {
         "specialdate" => time() - ConnectionManager::connectionTime
     ));
     try {
+        // Supprime les comptes non activé dont le temps est dépassé.
         $bdd->beginTransaction();
         $request = $bdd->prepare("SELECT username FROM accounts WHERE creationdate<=:specialdate AND active=0");
         $request->execute(array(
@@ -36,8 +38,10 @@ try {
     } catch (Exception $e) {
         $bdd->rollBack();
     }
+    // Remet les livraisons à faux.
     $request = $bdd->prepare("UPDATE users SET delivered=0");
     $request->execute();
+    // Rejette les paiements qui ont été crées il y a plus de 24H.
     $request = $bdd->prepare("SELECT sessionid FROM payments WHERE creationdate<=:specialdate");
     $request->execute(array(
         "specialdate" => time() - 24 * 3600
@@ -46,6 +50,7 @@ try {
     foreach ($result as $payment) {
         PayyManager::rejectPayy($bdd, $payment["sessionid"]);
     }
+    // Recherche tous les utilisateurs éligibles à la livraison et réinitialise ensuite tous les paramètres de tournée.
     $specvalue = WeekDay::getDay() . "value";
     $request = "SELECT * FROM users WHERE value>=+replace+ AND +replace+!=0 ORDER BY city";
     $request = str_replace("+replace+", $specvalue, $request);
@@ -77,6 +82,7 @@ try {
         "value" => json_encode(array()),
         "label" => "optitour"
     ));
+    // Calcul l'itinéraire le plus optimisé en utilisant l'API open-street par tranche de 1000 utilisateurs. (Ou moins dans certains cas évidemment).
     $i = 0;
     if (count($result) > 0) {
         $end = false;
@@ -107,6 +113,7 @@ try {
         $result2 = $request->fetchAll();
         $result2 = json_decode($result2[0]["value"], true);
         $opti = json_decode($response, true);
+        // Ecrit les étapes optimisées par tranche de 1000 dans le cas d'une erreur lors de la communication avec l'API.
         foreach ($opti["OPTIMIZATION"] as $index) {
             $result2[] = $index;
         }

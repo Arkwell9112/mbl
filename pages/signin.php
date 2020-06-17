@@ -7,6 +7,8 @@ $firstref = "../pages/signup.php";
 $secondfield = "Accueil";
 $secondref = "../pages/main.php";
 
+// Page pour l'affichage de la connexion à l'espace membre.
+
 $isnav = true;
 $title = "Se connecter";
 

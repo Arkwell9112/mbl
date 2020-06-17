@@ -5,9 +5,12 @@ require_once("/var/www/mbl/classes/MBLException.php");
 
 class AccountManager
 {
+    // Temps avant qu'un reset ne soit invalide.
     public const resetTime = 2 * 3600;
+    // Temps avant qu'un compte non activé ne soit invalide.
     public const activeTime = 24 * 3600;
 
+    // Permet de vérifier que les informations fournies pour la création d'un compte sont valables.
     public static function checkErrors(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city)
     {
         $request = $bdd->prepare("SELECT username FROM accounts WHERE username=:name");
@@ -63,6 +66,7 @@ class AccountManager
         }
     }
 
+    // Permet la création d'un compte utilisateur. Envoit en même temps le mail de vérification de l'adresse mail.
     public static function createAccount(PDO $bdd, string $username, string $passwd, string $passwd2, string $mail, string $phone, string $city, string $address, string $geocode)
     {
         try {
@@ -108,6 +112,7 @@ class AccountManager
         }
     }
 
+    // Permet la création d'une entrée resets dans la base de donnée. Crée le token et envoit le mail de réinitialisation du mot de passe.
     public static function setPasswdReset(PDO $bdd, string $username)
     {
         $request = $bdd->prepare("SELECT * FROM accounts WHERE username=:username");
@@ -156,6 +161,7 @@ class AccountManager
         }
     }
 
+    //Permet le remplacement du mot de passe. Vérifie la cohérence des informations et la validité du token ainsi que la validité de temps de l'entrée resets.
     public static function resetPasswd(PDO $bdd, string $token, string $passwd, string $passwd2)
     {
         if ($passwd == $passwd2) {
@@ -196,6 +202,7 @@ class AccountManager
         }
     }
 
+    // Permet l'activation d'un compte à partir de son verificationid.
     public static function activeAccount(PDO $bdd, string $verificationid)
     {
         $request = $bdd->prepare("SELECT username FROM accounts WHERE verificationid=:id");

@@ -1,3 +1,4 @@
+<!-- Fragment pour l'affichage du footer dans tout le site. -->
 <footer>
     <div class="aligner" id="aligner1">
         <div class="aligned">

@@ -1,4 +1,7 @@
 <?php
+
+// Page de réussite ou d'échec pour les paiements.
+
 if (isset($_GET["status"])) {
     $status = $_GET["status"];
 } else {

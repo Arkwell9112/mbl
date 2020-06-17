@@ -3,6 +3,7 @@ require_once("/var/www/mbl/classes/MBLException.php");
 
 class VallManager
 {
+    // Permet de modifier la value d'un utilisateur. Effectue aussi l'insertion de l'opération en fonction de content et de secret. Valide aussi la livraison si delivering est passé à true.
     public static function editValue(PDO $bdd, float $amount, string $username, array $content, string $secret, bool $delivering = false)
     {
         $request = $bdd->prepare("LOCK TABLES users WRITE");

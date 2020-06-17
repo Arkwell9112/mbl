@@ -3,6 +3,8 @@ require_once("../classes/PDOManager.php");
 require_once("../classes/WeekDay.php");
 require_once("../classes/VallManager.php");
 
+// Fragment pour l'affichage de la liste des utilisateurs passés dans la tournée.
+
 try {
     $bdd = PDOManager::getPDO();
 } catch (Exception $e) {
@@ -28,6 +30,7 @@ try {
             </thead>
             <tbody>
             <?php
+            // On récupère toutes les inforamtions nécessaires de la tournée puis on boucle sur les personnes passées. On affiche les informations ainsi que le bouton pour forcer la validation.
             $request = $bdd->prepare("SELECT value FROM global WHERE label=:label");
             $request->execute(array(
                 "label" => "passed"

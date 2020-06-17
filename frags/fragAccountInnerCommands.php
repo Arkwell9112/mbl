@@ -4,6 +4,7 @@ if ($first) {
 } else {
     $id = "";
 }
+// Sous-fragment pour l'affichage du résultat de cuaque village.
 ?>
 <article id="<?php echo $id ?>">
     <div class="title">
@@ -26,6 +27,7 @@ if ($first) {
             </thead>
             <tbody>
             <?php
+            // On affiche tous les produits et leurs quantités.
             foreach ($products as $key2 => $product) {
                 echo "<tr>";
                 echo "<td>$key2</td>";

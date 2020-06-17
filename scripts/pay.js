@@ -1,5 +1,7 @@
 window.addEventListener("load", init);
 
+// Redirection quand on est sur la page pay.php.
+
 function init() {
     setTimeout(redirect, 3000);
 }

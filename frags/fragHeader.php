@@ -2,6 +2,8 @@
 if (!isset($toadd)) {
     $toadd = "";
 }
+
+// Fragment pour l'affiche du header dans tout le site.
 ?>
 
 <!DOCTYPE html>

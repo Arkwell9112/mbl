@@ -5,8 +5,10 @@ require_once("/var/www/mbl/classes/IDManager.php");
 
 class ConnectionManager
 {
+    // Temps avant que la connexion ne soit plus valide.
     public const connectionTime = 3600 * 24 * 3;
 
+    // Permet la création d'une connexion à partir d'un nom d'utilisateur et d'un mot de passe.
     public static function connectWithPasswd(PDO $bdd, string $username, string $passwd): string
     {
         $request = $bdd->prepare("SELECT username,hashword,safeid,active FROM accounts WHERE username=:username");
@@ -51,6 +53,7 @@ class ConnectionManager
         }
     }
 
+    // Permet la récupération d'une coonnexion à partir de son token. Si le temps n'est plus valide la connexion est supprimée.
     public static function connectWithToken(PDO $bdd, string $token): string
     {
         $request = $bdd->prepare("SELECT * FROM connections WHERE token=:token");
@@ -75,6 +78,7 @@ class ConnectionManager
         }
     }
 
+    // Permet la suppression d'une connexion par son token. Vérifie quand même le temps et renvoit une erreur si le temps est invalide.
     public static function disconnectWithToken(PDO $bdd, string $token)
     {
         $request = $bdd->prepare("SELECT * FROM connections WHERE token=:token");

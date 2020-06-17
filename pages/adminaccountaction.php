@@ -5,13 +5,17 @@ require_once("../classes/VallManager.php");
 require_once("../classes/CommandManager.php");
 require_once("../classes/WeekDay.php");
 
+// Page de traitement pour les ordres provenants de adminaccount.php
+
 try {
+    // Véerification connexion et administrateur.
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (!PDOManager::checkAdmin($username)) {
         header("Location: https://monboulangerlivreur.fr/pages/account.php");
         exit();
     }
+    // En fonction de l'action on fait appel à des classes externes.
     if ($_POST["action"] == "editvalue") {
         $content = array(
             "title" => "Opération sur le solde",
@@ -45,7 +49,9 @@ try {
         }
         CommandManager::deleteDayFromAll($bdd, $days, false, $_POST["city"]);
         header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
+        // Action consistant à valider la commande d'un utilisateur.
     } else if ($_POST["action"] == "force") {
+        // Récupération informations et préparation content pour modification value.
         $request = $bdd->prepare("SELECT delivered FROM users WHERE username=:username");
         $request->execute(array(
             "username" => $_POST["username"]
@@ -62,9 +68,11 @@ try {
             "title" => "Paiement commande",
             "content" => json_encode($products)
         );
+        // Vérification que l'utilisateur n'a pas déjà été livré (validé).
         if ($result[0]["delivered"] == 0) {
             VallManager::editValue($bdd, -$_POST["amount"], $_POST["username"], $content, "", true);
         }
+        // On le retire des utilisateurs passés.
         $request = $bdd->prepare("LOCK TABLES global WRITE");
         $request->execute();
         $request = $bdd->prepare("SELECT value FROM global WHERE label=:label");

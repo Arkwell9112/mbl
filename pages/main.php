@@ -2,6 +2,8 @@
 require_once("../classes/PDOManager.php");
 require_once("../classes/ConnectionManager.php");
 
+// Page d'accueil.
+
 $firstref = "";
 $firstfield = "";
 $secondref = "";

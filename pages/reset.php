@@ -6,6 +6,8 @@ $secondref = "../pages/main.php";
 $isnav = true;
 $title = "Réinitialiser votre mot de passe";
 
+// Page pour l'affichage de la demande de réinitialisation du mot de passe.
+
 if (isset($_GET["status"])) {
     $status = $_GET["status"];
 } else {

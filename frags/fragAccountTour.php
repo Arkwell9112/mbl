@@ -2,6 +2,10 @@
 require_once("../classes/WeekDay.php");
 require_once("../classes/VallManager.php");
 
+// Fragment pour l'affichage de la page tournée du compte administrateur.
+
+
+// Fonction pour faire avancer de 1 le client courant de la tournée.
 function pp(PDO $bdd)
 {
     $request = $bdd->prepare("LOCK TABLES global WRITE");
@@ -25,6 +29,7 @@ if (!isset($_POST["action"])) {
     $action = $_POST["action"];
 }
 
+// On récupère toutes les informations pour l'affichage de la tournée.
 try {
     $request = $bdd->prepare("SELECT value FROM global WHERE label=:label");
     $request->execute(array(
@@ -54,6 +59,8 @@ try {
     header("Refresh:0");
 }
 
+// On regarde si on est en train d'éxécuter une action. Si oui on regarde laquelle et on applique.
+// Ici on valide la commande, on édité donc la value de l'utilisateur puis on fait avancer la tournée.
 if (preg_match("#validate#", $action)) {
     $customer = $inittour[$optitour[$currentuser]];
     $command = json_decode($customer["command"], true);
@@ -82,6 +89,7 @@ if (preg_match("#validate#", $action)) {
     } catch (Exception $e) {
         header("Refresh:0");
     }
+    // Ici on ne fait que passer par-dessus l'utilisateur et l'ajouter aux utilisateurs passés.
 } else if (preg_match("#bypass#", $action)) {
     try {
         $request = $bdd->prepare("LOCK TABLES global WRITE");
@@ -108,6 +116,7 @@ if (preg_match("#validate#", $action)) {
     }
 }
 
+// On regarde si l'on est à la fin de la tournée ou non.
 if ($currentuser <= $maxcustomer) {
     $customer = $inittour[$optitour[$currentuser]];
     $name = $customer["username"];
@@ -131,10 +140,8 @@ if ($currentuser <= $maxcustomer) {
         <span class="tounderline">Adresse :</span><?php echo " " . $address ?><br><br>
         <span class="tounderline">Commande :</span><br><br>
         <?php
+        // On affiche seulement les produits et quantités pour le jour courant. D'après la commande de cette personne.
         $products = array();
-        if (!isset($command)) {
-            $command = array();
-        }
         foreach ($command as $key => $product) {
             $products[$key] = $product[WeekDay::getDay()];
         }

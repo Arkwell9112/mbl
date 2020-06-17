@@ -1,6 +1,8 @@
 <?php
-include("../classes/PDOManager.php");
-include("../classes/ConnectionManager.php");
+require_once("../classes/PDOManager.php");
+require_once("../classes/ConnectionManager.php");
+
+// Page d'affichage du compte administrateur.
 
 $title = "Accés administrateur";
 $firstfield = "Se déconnecter";
@@ -21,6 +23,7 @@ if (isset($_GET["page"])) {
     $page = "clients";
 }
 
+// On utilise différents scripts en fonction de la page à afficher.
 if (preg_match("#clients#", $page)) {
     $toadd = "<script src='../scripts/clienteditor.js'></script>";
 } else if (preg_match("#cities#", $page)) {
@@ -30,6 +33,7 @@ if (preg_match("#clients#", $page)) {
 $style = "text-decoration: underline black";
 
 try {
+    // On vérifie la connexion et si l'utilisateur est bien administrateur.
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (!PDOManager::checkAdmin($username)) {
@@ -44,6 +48,7 @@ try {
     exit();
 }
 include("../frags/fragHeader.php");
+// On affiche la barre de navigation propre au compte administrateur.
 ?>
     <div id="secondnav">
         <div id="innernav1" class="innernav"><a style="<?php if (preg_match("#clients#", $page)) echo $style ?>"
@@ -56,6 +61,8 @@ include("../frags/fragHeader.php");
                                                 href="adminaccount.php?page=tour">Ma tournée</a></div>
     </div>
 <?php
+
+// En fonction de la page à afficher on insére différents fragments.
 if (preg_match("#clients#", $page)) {
     include("../frags/fragAccountClients.php");
 } else if (preg_match("#cities#", $page)) {

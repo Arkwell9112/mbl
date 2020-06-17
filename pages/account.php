@@ -2,6 +2,8 @@
 require_once("../classes/PDOManager.php");
 require_once("../classes/ConnectionManager.php");
 
+// Page pour l'affichage d'un compte utilisateur.
+
 $toadd = "";
 
 if (isset($_GET["status"])) {
@@ -15,12 +17,15 @@ if (!isset($_COOKIE["token"])) {
 }
 
 try {
+    // On vérifie que la personne est connectée. Sinon on redirige vers la connexion, si administrateur on redirige vers adminaccount.
     $bdd = PDOManager::getPDO();
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
     if (PDOManager::checkAdmin($username)) {
         header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
         exit();
     }
+    // Récupèration de toutes les informations pour l'affichage comme infos perso, infos sur le village, infos sur les produits pour ajout de produit.
+    // Récupèration aussi des opérations concernant l'utilisateur.
     $request = $bdd->prepare("SELECT * FROM users WHERE username=:username");
     $request->execute(array(
         "username" => $username
@@ -92,6 +97,7 @@ include("../frags/fragHeader.php");
             if (!isset($command)) {
                 $command = array();
             }
+            // On boucle sur la commande pour afficher lesproduits et les quantités choisies. On affiche aussi les petits boutons de modification.
             foreach ($command as $key => $value) {
                 $row = "<td>$key</td>";
                 for ($i = 0; $i <= 6; $i++) {
@@ -137,6 +143,7 @@ include("../frags/fragHeader.php");
             <tbody>
             <tr>
                 <?php
+                // On affiche les informations sur le village.
                 for ($i = 1; $i <= count($result3[0]) / 2 - 1; $i++) {
                     if ($result3[0][$i] == "0") {
                         echo "<td>Non livré</td>";
@@ -151,6 +158,7 @@ include("../frags/fragHeader.php");
         </table>
     </div>
 </article>
+<!-- Article pour afficher le montant restant et proposer un lien vers le rechargement. -->
 <article>
     <div class="title">
         <img id="wallet" src="../imgs/money.svg">
@@ -163,6 +171,7 @@ include("../frags/fragHeader.php");
                 href="tostripe.php?value=40">40 €</a> <a href="tostripe.php?value=60">60 €</a>
     </p>
 </article>
+<!-- Rappelle des données personnelles possédées par le site. -->
 <article>
     <div class="title">
         <img src="../imgs/datas.svg">
@@ -194,6 +203,7 @@ include("../frags/fragHeader.php");
             </thead>
             <tbody>
             <?php
+            // On boucle sur les opérations qui concerne l'utilisateur et on les affichent.
             foreach ($result5 as $innerresult) {
                 $id = $innerresult["id"];
                 echo "<tr>";

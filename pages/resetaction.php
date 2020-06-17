@@ -2,6 +2,8 @@
 require_once("../classes/PDOManager.php");
 require_once("../classes/AccountManager.php");
 
+// Page de traitement pour la demande de réinitialisation de mot de passe.
+
 try {
     $bdd = PDOManager::getPDO();
     AccountManager::setPasswdReset($bdd, $_POST["username"]);

@@ -4,6 +4,7 @@ window.addEventListener("load", reinit);
 
 let inuse;
 
+// Trois fonctions d'initialisation des events listener.
 function first() {
     let editbuttonss = document.getElementsByClassName("editorbutton");
     for (const index in editbuttonss) {
@@ -25,6 +26,7 @@ function reinit() {
     }
 }
 
+// Permet de modifier le prix d'un produit. Ajoute les inputs nécessaire.
 function editproduct(e) {
     if (!inuse) {
         let row = e.target.parentElement.parentElement;
@@ -39,6 +41,7 @@ function editproduct(e) {
     }
 }
 
+// Permet d'afficher l'input pour ajouter un nouveau produit.
 function newProduct(e) {
     if (!inuse) {
         let cell1 = document.getElementById("addcell");
@@ -47,6 +50,7 @@ function newProduct(e) {
     }
 }
 
+// Permet d'afficher l'input pour un  nouveau village.
 function addcity() {
     if (!inuse) {
         let cell = document.getElementById("addcell2");
@@ -55,6 +59,7 @@ function addcity() {
     }
 }
 
+// Permet l'ajout des inputs pour modifier une ville.
 function editcity(e) {
     if (!inuse) {
         let row = e.target.parentElement.parentElement;

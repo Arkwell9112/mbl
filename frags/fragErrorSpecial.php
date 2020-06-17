@@ -1,3 +1,3 @@
 <div class="errorpanel">
-    Une erreur est survenue. Veulliez réessayer.
+    Une erreur est survenue. Veuillez réessayer.
 </div>

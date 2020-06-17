@@ -1,3 +1,4 @@
+<!-- Fragment pour l'affichage de la page Produits et Villages du compte administrateur. -->
 <article id="oncearticle">
     <div class="title">
         <img src="../imgs/softbread.svg">
@@ -14,6 +15,7 @@
             </thead>
             <tbody>
             <?php
+            // On affiche les produits et leur prix. Bien formatés. Et le bouton de modification.
             $request = $bdd->prepare("SELECT * FROM products");
             $request->execute();
             $result2 = $request->fetchAll();
@@ -54,6 +56,7 @@
             </thead>
             <tbody>
             <?php
+            // De même avec les villages, on affiche les livraisons pour chaque jour. Et le bouton de modification.
             $request = $bdd->prepare("SELECT * FROM cities");
             $request->execute();
             $result3 = $request->fetchAll();

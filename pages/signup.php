@@ -7,6 +7,8 @@ $firstref = "../pages/signin.php";
 $secondfield = "Accueil";
 $secondref = "../pages/main.php";
 
+// Page pour l'affichage de la création de compte utilisateur.
+
 $isnav = true;
 $title = "S'inscrire";
 
@@ -27,6 +29,7 @@ try {
 
 if (isset($bdd) && isset($_COOKIE["token"])) {
     try {
+        // Si déjà connecté on redirige vers la page account.php.
         ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
         header("Location: https://monboulangerlivreur.fr/pages/account.php");
     } catch (Exception $e) {

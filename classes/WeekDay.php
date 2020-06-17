@@ -3,6 +3,7 @@
 
 class WeekDay
 {
+    //Permet de récupérer le numérique du jour de la semaine. 0 Lundi 6 Dimanche.
     public static function getDay(): int
     {
         $day = date("l");

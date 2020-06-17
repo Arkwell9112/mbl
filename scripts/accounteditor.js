@@ -4,6 +4,7 @@ let addbutton;
 let using;
 let editbuttons;
 
+// Fonction initialisant les events listener des boutons de modification. Ou d'ajout.
 function init() {
     addbutton = document.getElementById("addbutton");
     addbutton.addEventListener("click", addproduct);
@@ -14,6 +15,7 @@ function init() {
     }
 }
 
+// On présente l'élément select pour l'ajout d'un produit.
 function addproduct(e) {
     if (!using) {
         let form = e.target.parentElement;
@@ -37,6 +39,7 @@ function addproduct(e) {
     }
 }
 
+// On ajoute et remplit les inputs pour permettre la modification des produits dans la commande.
 function editproduct(e) {
     if (!using) {
         let row = e.target.parentElement.parentElement;

@@ -1,7 +1,9 @@
 <?php
+require_once("../classes/WeekDay.php");
 
-include("../classes/WeekDay.php");
-
+// Fragment pour l'affichage des prédictions de commande. On boucle ainsi sur chaque village pour afficher les commandes.
+//L'insertion de l'affichage des commandes se fait par un sous-fragment.
+// On boucle d'abord sur les villages puis sur les jours et enfin sur les produits.
 try {
     $prediction = array();
     $request = $bdd->prepare("SELECT * FROM cities");
@@ -48,9 +50,10 @@ try {
         }
     }
 } catch (Exception $e) {
-    header("Refresh:0");
+    header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
 }
 $first = true;
+// Insertion du résultat par un sous-fragment.
 foreach ($prediction as $key => $products) {
     include("../frags/fragAccountInnerCommands.php");
     $first = false;

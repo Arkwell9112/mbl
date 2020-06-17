@@ -10,6 +10,9 @@ let aligner1;
 let aligner2;
 let aligner3;
 
+// Si le footer n'est pas en bas de page on le met en bas de page.
+// SI le footer est replacé et que l'événement de focus d'un input pour smartphone est déclenché on rend le footer invisible.
+// Pour éviter que le footer ne masque les inputs sur smartphone.
 function initiation() {
     rightarraow = document.getElementById("rightarrow");
     leftarrow = document.getElementById("leftarrow");
@@ -48,6 +51,7 @@ function left() {
     updateFooter();
 }
 
+// On met à jour le footer. On déplace vers la droite ou vers la gauche les éléments (Uniquement quand on est au format mobile).
 function updateFooter() {
     if (current == 1) {
         leftarrow.style.display = "none";
@@ -68,6 +72,7 @@ function updateFooter() {
     }
 }
 
+// Gestion des événements de focus pour smartphone.
 function makefocus() {
     let footers = document.getElementsByTagName("footer");
     footers[0].style.display = "none";

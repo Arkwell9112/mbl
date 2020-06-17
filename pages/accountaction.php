@@ -3,9 +3,13 @@ require_once("../classes/PDOManager.php");
 require_once("../classes/ConnectionManager.php");
 require_once("../classes/CommandManager.php");
 
+// Page de traitement pour les ordres venant de account.php
+
 try {
     $bdd = PDOManager::getPDO();
+    // Vérification que la personne est bien connectée.
     $username = ConnectionManager::connectWithToken($bdd, $_COOKIE["token"]);
+    // En fonction de l'action on fait appel aux classes statiques externes.
     if (isset($_GET["action"])) {
         if ($_GET["action"] == "disconnect") {
             ConnectionManager::disconnectWithToken($bdd, $_COOKIE["token"]);

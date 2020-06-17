@@ -2,6 +2,8 @@
 require_once("../classes/PDOManager.php");
 require_once("../classes/ConnectionManager.php");
 
+// Page pour le traitement de la connexion à l'espace client. La partie utilisant backtrace n'est plus utilisée depuis l'archivage de la fonction link.
+
 try {
     $bdd = PDOManager::getPDO();
     $token = ConnectionManager::connectWithPasswd($bdd, $_POST["username"], $_POST["passwd"]);

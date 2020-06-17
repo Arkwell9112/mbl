@@ -10,6 +10,7 @@ function init() {
     using = false;
 }
 
+// Permet d'afficher les inputs pour ajouter du solde par le boulanger.
 function editValue(e) {
     if (!using) {
         let row = e.target.parentElement.parentElement;

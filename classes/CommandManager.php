@@ -5,6 +5,8 @@ require_once("../classes/MBLException.php");
 
 class CommandManager
 {
+    // Permet la modification de la commande d'un utilisateur. Vérifie la cohérence des quantités. Vérifie que la modification n'est pas effectué le jour même.
+    // Vérifie l'existence du produit et met à jour en fonction des jours livrés dans la ville. Met ensuite à jour la value de l'utilisateur.
     public static function editCommand(PDO $bdd, string $product, array $amounts, string $username)
     {
         $goods = 0;
@@ -84,6 +86,7 @@ class CommandManager
         }
     }
 
+    // Permet la mise à jour des value de l'utilisateur. Utilise les prix de la table products. Fais les sommes et enregistre ensuite dans la table users.
     public static function updateValue(PDO $bdd, array $command, string $username)
     {
         $value = array(0, 0, 0, 0, 0, 0, 0);
@@ -107,6 +110,7 @@ class CommandManager
         }
     }
 
+    // Permet de supprimer un produit de la commande de tous les utilisateurs.
     public static function deleteProductFromAll(PDO $bdd, string $product)
     {
         $request = $bdd->prepare("SELECT * FROM users");
@@ -118,7 +122,6 @@ class CommandManager
                 $command = json_decode($user["command"], true);
                 if (array_key_exists($product, $command)) {
                     self::deleteProduct($bdd, $product, $user["username"], false);
-                    //add mail sending
                 }
             }
             $request = $bdd->prepare("DELETE FROM products WHERE name=:name");
@@ -132,6 +135,7 @@ class CommandManager
         }
     }
 
+    // Permet de supprimer un produit de la commande d'un utilisateur. Vérifie si la modification est effectué le jour même (quand errored = true).
     public static function deleteProduct(PDO $bdd, string $product, string $username, bool $errored)
     {
         $request = $bdd->prepare("SELECT command FROM users WHERE username=:username");
@@ -143,9 +147,11 @@ class CommandManager
         $command = json_decode($command, true);
         if (isset($command[$product])) {
             if ($errored) {
+                /*
                 if ($command[$product][(WeekDay::getDay() + 1) % 7] != 0) {
                     throw new MBLException("24h");
                 }
+                */
                 if ($command[$product][(WeekDay::getDay()) % 7] != 0) {
                     throw new MBLException("24h");
                 }
@@ -162,6 +168,7 @@ class CommandManager
         }
     }
 
+    // Permet la mise à jour de la valeur de tous les utilisateurs. Et affecte en même temps un nouveau prix pour un produit.
     public static function updateValueFromAll(PDO $bdd, string $product, float $price)
     {
         $request = $bdd->prepare("SELECT * FROM users");
@@ -176,11 +183,7 @@ class CommandManager
             ));
             foreach ($result as $user) {
                 $command = json_decode($user["command"], true);
-                if (!isset($command)) {
-                    $command = array();
-                }
                 self::updateValue($bdd, $command, $user["username"]);
-                //add mail notif
             }
             $bdd->commit();
         } catch (Exception $e) {
@@ -189,6 +192,7 @@ class CommandManager
         }
     }
 
+    // Permet l'ajout d'un nouveau produit dans la table products.
     public static function addProduct(PDO $bdd, string $product)
     {
         $request = $bdd->prepare("INSERT INTO products VALUES(:name, 0)");
@@ -197,6 +201,8 @@ class CommandManager
         ));
     }
 
+    // Permet la suppression d'un jour de livraison chez tous les utilisateurs concernés car met en même temps à jour la table de livraison d'un village.
+    // Met aussi à jour les values en fonction. Permet aussi l'insertion d'un nouveau village. (et la modification évidemment).
     public static function deleteDayFromAll(PDO $bdd, array $days, bool $new, string $name)
     {
         $request = $bdd->prepare("SELECT * FROM users WHERE city=:city");
@@ -208,9 +214,6 @@ class CommandManager
             $bdd->beginTransaction();
             foreach ($result as $user) {
                 $command = json_decode($user["command"], true);
-                if (!isset($command)) {
-                    $command = array();
-                }
                 for ($i = 0; $i <= 6; $i++) {
                     if ($days[$i] == "0") {
                         foreach ($command as $key => $product) {
