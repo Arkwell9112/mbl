@@ -3,6 +3,7 @@ require_once("../classes/PDOManager.php");
 require_once("../classes/ConnectionManager.php");
 require_once("../classes/VallManager.php");
 require_once("../classes/CommandManager.php");
+require_once("../classes/WeekDay.php");
 
 try {
     $bdd = PDOManager::getPDO();
@@ -44,6 +45,44 @@ try {
         }
         CommandManager::deleteDayFromAll($bdd, $days, false, $_POST["city"]);
         header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=cities");
+    } else if ($_POST["action"] == "force") {
+        $request = $bdd->prepare("SELECT delivered FROM users WHERE username=:username");
+        $request->execute(array(
+            "username" => $_POST["username"]
+        ));
+        $result = $request->fetchAll();
+        $command = json_decode($_POST["command"]);
+        $products = array(
+            "Montant" => number_format(-$_POST["amount"], 2) . "€"
+        );
+        foreach ($command as $key => $product) {
+            $products[$key] = $product[WeekDay::getDay()];
+        }
+        $content = array(
+            "title" => "Paiement commande",
+            "content" => json_encode($products)
+        );
+        if ($result[0]["delivered"] == 0) {
+            VallManager::editValue($bdd, -$_POST["amount"], $_POST["username"], $content, "", true);
+        }
+        $request = $bdd->prepare("LOCK TABLES global WRITE");
+        $request->execute();
+        $request = $bdd->prepare("SELECT value FROM global WHERE label=:label");
+        $request->execute(array(
+            "label" => "passed"
+        ));
+        $passed = $request->fetchAll();
+        $passed = json_decode($passed[0]["value"], true);
+        unset($passed[array_search($_POST["index"], $passed)]);
+        $passed = json_encode($passed);
+        $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+        $request->execute(array(
+            "value" => $passed,
+            "label" => "passed"
+        ));
+        $request = $bdd->prepare("UNLOCK TABLES");
+        $request->execute();
+        header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php?page=force");
     }
 } catch (Exception $e) {
     header("Location: https://monboulangerlivreur.fr/pages/adminaccount.php");
