@@ -54,15 +54,15 @@ include("../frags/fragHeader.php");
             <?php if (preg_match("#badpasswd#", $status)) include("../frags/fragErrorPasswd.php") ?>
             <?php if (preg_match("#diffpasswd#", $status)) include("../frags/fragInfoDiff.php") ?>
             <input type="password" name="passwd1" placeholder="Mot de passe"><br>
-            <input type="password" name="passwd2" placeholder="Répétez le mot de passe" size="25"><br>
+            <input type="password" name="passwd2" placeholder="Répétez le mot de passe"><br>
             <?php if (preg_match("#badmail#", $status)) include("../frags/fragErrorMail.php") ?>
             <?php if (preg_match("#mailexists#", $status)) include("../frags/fragInfoMail.php") ?>
             <input value="<?php if (isset($_GET["mail"])) echo $_GET["mail"] ?>" type="email" name="mail"
-                   placeholder="Adresse e-mail" size="25"><br>
+                   placeholder="Adresse e-mail"><br>
             <?php if (preg_match("#phoneexists#", $status)) include("../frags/fragInfoPhone.php") ?>
             <?php if (preg_match("#badphone#", $status)) include("../frags/fragErrorPhone.php") ?>
             <input value="<?php if (isset($_GET["phone"])) echo $_GET["phone"] ?>" type="tel" name="phone"
-                   placeholder="Numéro de téléphone" size="25"><br>
+                   placeholder="Numéro de téléphone"><br>
             <input value="<?php if (isset($_GET["address"])) echo $_GET["address"] ?>" placeholder="N° et nom de rue"
                    type="text" name="address">
             <?php if (preg_match("#badcity#", $status)) include("../frags/fragErrorCity.php") ?>
