@@ -17,21 +17,9 @@ body {
     position: relative;
 }
 
-#secondnav {
-    text-align: center;
-    font-family: worksans;
-    margin-top: 4vw;
-    font-size: 1.5vw;
-}
-
-.innernav {
-    float: left;
-    width: 25%;
-}
-
-.innernav a {
-    color: #FFC700;
-}
+/*
+Style et placement pour le header.
+ */
 
 header {
     background-image: url("../imgs/fbackground.png");
@@ -39,20 +27,6 @@ header {
     height: 25vw;
     box-shadow: 0 0 30px 2px #808080;
     position: relative;
-}
-
-#leftback {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    height: 100%;
-}
-
-#rightback {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    height: 100%;
 }
 
 header h1 {
@@ -73,20 +47,40 @@ header div div {
     z-index: 1;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    position: relative;
+/*
+Superbe fond, positionnement.
+ */
+
+#leftback {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
 }
 
-a::after {
-    content: "";
+#rightback {
     position: absolute;
-    bottom: -1px;
-    right: 50%;
-    height: 0.2vw;
-    background-color: transparent;
-    width: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+
+/*
+Positionnement et style pour la nav classique.
+ */
+
+nav {
+    position: absolute;
+    left: 2vw;
+    top: 2vw;
+    background-color: #FAF1B9;
+    padding: 0px 20px 0px 20px;
+    border-radius: 40px;
+    height: 5vw;
+    font-size: 1.4vw;
+    font-family: worksans;
+    box-shadow: 0 0 4px 1px #808080;
+    z-index: 1;
 }
 
 #leftnav {
@@ -120,21 +114,47 @@ a::after {
     background-color: #FFFFFF;
 }
 
-nav {
-    position: absolute;
-    left: 2vw;
-    top: 2vw;
-    background-color: #FAF1B9;
-    padding: 0px 20px 0px 20px;
-    border-radius: 40px;
-    height: 5vw;
-    font-size: 1.4vw;
-    font-family: worksans;
-    box-shadow: 0 0 4px 1px #808080;
-    z-index: 1;
+/*
+Pour l'animation de la nav classique.
+ */
+
+a {
+    text-decoration: none;
+    color: black;
+    position: relative;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px) {
+a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 50%;
+    height: 0.2vw;
+    background-color: transparent;
+    width: 0px;
+}
+
+/*
+Positionnement et style pour la nav spécial administrateur.
+ */
+
+#secondnav {
+    text-align: center;
+    font-family: worksans;
+    margin-top: 4vw;
+    font-size: 1.5vw;
+}
+
+.innernav {
+    float: left;
+    width: 25%;
+}
+
+.innernav a {
+    color: #FFC700;
+}
+
+@media screen and (max-width: 1280px) {
     nav {
         font-size: 2vw;
     }
@@ -150,7 +170,7 @@ nav {
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 699px) {
+@media screen and (max-width: 699px) {
     nav {
         font-size: 3vw;
     }
@@ -178,10 +198,6 @@ nav {
 @media screen and (max-width: 429px) {
     nav {
         font-size: 3.5vw;
-    }
-
-    a::after {
-        height: 0.3vw;
     }
 
     header {

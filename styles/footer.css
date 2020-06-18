@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/*
+Placement des éléments du footer. On donne aussi les styles pour le contenu du footer.
+ */
+
 footer {
     background-image: url("../imgs/fbackground.png");
     background-size: cover;
@@ -8,23 +12,6 @@ footer {
     height: 10vw;
     padding: 1vw 0px 1vw 0px;
     font-family: worksans;
-}
-
-#copyright {
-    position: absolute;
-    text-align: center;
-    bottom: 1vw;
-    width: 75%;
-    left: 12.5%;
-    font-weight: normal;
-}
-
-#rightarrow {
-    display: none;
-}
-
-#leftarrow {
-    display: none;
 }
 
 footer ul {
@@ -44,6 +31,10 @@ footer h4 {
     font-size: 1.4vw;
 }
 
+/*
+Classes pour le placement du texte dans les cases du footer.
+ */
+
 .aligner {
     width: 33.33%;
     float: left;
@@ -55,7 +46,32 @@ footer h4 {
     text-align: left;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px) {
+/*
+ID pour le style et le positionnement du copyright.
+ */
+
+#copyright {
+    position: absolute;
+    text-align: center;
+    bottom: 1vw;
+    width: 75%;
+    left: 12.5%;
+    font-weight: normal;
+}
+
+/*
+On définit les fléches pour le responsive du footer comme non affichées.
+ */
+
+#rightarrow {
+    display: none;
+}
+
+#leftarrow {
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
     footer {
         height: 20vw;
     }
@@ -65,22 +81,34 @@ footer h4 {
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 699px) {
+@media screen and (max-width: 699px) {
     footer {
         height: 35vw;
         margin-top: 10vw;
         padding-top: 2vw;
+        position: relative;
+        overflow: hidden;
     }
 
     footer h4 {
         font-size: 4vw;
     }
 
+    footer li {
+        margin-top: 1vw;
+        font-size: 3.5vw;
+    }
+
     .aligner {
         margin-left: 1.5vw;
         width: 50%;
+        position: absolute;
+        transition: left .3s ease;
     }
 
+    /*
+    On place les trois boites du footer pour le mode responsive.
+     */
     #aligner1 {
         left: 25%;
     }
@@ -93,27 +121,9 @@ footer h4 {
         left: 225%;
     }
 
-    footer li {
-        margin-top: 1vw;
-        font-size: 3.5vw;
-    }
-}
-
-@media screen and (max-width: 699px) {
-    footer {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .aligner {
-        position: absolute;
-        transition: left .3s ease;
-    }
-
-    body {
-        width: 100%;
-    }
-
+    /*
+    On affiche et on positionne les fléches de footer responsive.
+     */
     #rightarrow {
         display: block;
         position: absolute;
@@ -132,35 +142,7 @@ footer h4 {
 }
 
 @media screen and (max-width: 429px) {
-    footer {
-        height: 35vw;
-        margin-top: 10vw;
-        padding-top: 2vw;
-    }
-
-    footer h4 {
-        font-size: 4vw;
-    }
-
-    .aligner {
-        margin-left: 1.5vw;
-        width: 50%;
-    }
-
-    #aligner1 {
-        left: 25%;
-    }
-
-    #aligner2 {
-        left: 125%;
-    }
-
-    #aligner3 {
-        left: 225%;
-    }
-
     footer li {
-        margin-top: 1vw;
         font-size: 4vw;
     }
 }

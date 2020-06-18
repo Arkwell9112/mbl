@@ -1,7 +1,79 @@
 @charset "UTF-8";
 
-.tounderline {
+/*
+Style et positionnement pour les articles et les titres d'articles. Ainsi que les ul dans les articles.
+ */
+
+article {
+    width: 60%;
+    margin: 3vw auto 0px auto;
+    clear: both;
+}
+
+article .title {
+    background-color: #FAF1B9;
+    height: 4vw;
+    line-height: 4vw;
+    text-align: center;
+    border-radius: 30px;
+    font-family: worksans;
+    font-size: 2vw;
+    box-shadow: 0 0 15px 0.5px #808080;
+}
+
+article .title img {
+    float: left;
+    width: 4vw;
+}
+
+article ul {
+    font-family: worksans;
+    padding: 2vw 10px 10px 8vw;
+    font-size: 1.2vw;
+}
+
+/*
+Style et positionnement pour les signform (formulaire) dans les articles. Avec mise en page des éléments select2. Et liens de 'dessous'.
+ */
+
+article .signform {
+    background: linear-gradient(to top right, #FAF1B9, #FFC700);
+    text-align: center;
+    width: 75%;
+    margin: 4vw auto 0px auto;
+    padding: 1vw 0px 1vw 0px;
+    box-shadow: 0 0 4px 1px #808080;
+}
+
+article .signform input {
+    background-color: transparent;
+    border: none;
+    font-size: 2vw;
+    margin-top: 3vw;
+    border-bottom: white solid 0.2vw;
+    color: black;
+}
+
+article .signform select {
+    width: 60%;
+}
+
+article .signform .select2 {
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+}
+
+article .signform a {
+    display: block;
     text-decoration: underline;
+    margin-top: 1.5vw;
+    text-align: left;
+    margin-left: 2vw;
+    margin-right: auto;
+}
+
+article .signform a:hover {
+    font-weight: bold;
 }
 
 .bottomlink {
@@ -13,19 +85,21 @@
     margin-right: auto;
 }
 
-.toalign {
-    text-align: center;
-    width: 80%;
-    margin: auto;
+/*
+Style et positionnement pour articles spéciaux. (Seul ou premier).
+ */
+
+#firstarticle {
+    margin-top: 5vw;
 }
 
-.tobealigned {
-    text-align: left;
+#oncearticle {
+    margin-top: 8vw;
 }
 
-#addbutton {
-    color: blue;
-}
+/*
+Style de base des paragraphes, surtout utilisé dans l'affichage des informations personnelles.
+ */
 
 p {
     margin-top: 2vw;
@@ -41,97 +115,9 @@ p a {
     line-height: 10vw;
 }
 
-#money {
-    font-size: 4vw;
-    color: #FFC700;
-}
-
-#addbutton:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#wallet {
-    position: relative;
-    bottom: 0.4vw;
-}
-
-table {
-    width: 80%;
-    margin: 2vw auto auto auto;
-    text-align: center;
-}
-
-thead {
-    background-color: #FFC700;
-}
-
-tbody {
-    background-color: #FAF1B9;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    font-family: worksans;
-    font-weight: normal;
-}
-
-td, th {
-    padding: 5px 5px 5px 5px;
-}
-
-article #addcell .select2 {
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-}
-
-article #addcell .productselect {
-    width: 50%;
-}
-
-#addsubmit {
-    border: none;
-    background-color: transparent;
-    font-family: worksans;
-    color: blue;
-}
-
-#addsubmit:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.editbutton {
-    border: none;
-    background-color: transparent;
-    font-family: worksans;
-    color: blue;
-}
-
-.editbutton:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#addcell {
-    padding: 10px 10px 10px 10px;
-}
-
-article {
-    width: 60%;
-    margin: 3vw auto 0px auto;
-    clear: both;
-}
-
-article .signform {
-    background: linear-gradient(to top right, #FAF1B9, #FFC700);
-    text-align: center;
-    width: 75%;
-    margin: 4vw auto 0px auto;
-    padding: 1vw 0px 1vw 0px;
-    box-shadow: 0 0 4px 1px #808080;
-}
+/*
+Style pour les 'Jumbotron' notamment pour effectuer de la notification.
+ */
 
 .errorpanel {
     background-color: red;
@@ -160,49 +146,23 @@ article .signform {
     font-family: worksans;
 }
 
-article .signform input {
-    background-color: transparent;
-    border: none;
-    font-size: 2vw;
-    margin-top: 3vw;
-    border-bottom: white solid 0.2vw;
-    color: black;
+/*
+Petits ajustements pour les images qui dépasse du cadre.
+ */
+
+#wallet {
+    position: relative;
+    bottom: 0.4vw;
 }
 
-article .signform select {
-    width: 60%;
+#pay {
+    position: relative;
+    bottom: 0.25vw;
 }
 
-article .signform .select2 {
-    margin-top: 3vw;
-    margin-bottom: 2vw;
-}
-
-article
-article .signform a {
-    display: block;
-    text-decoration: underline;
-    margin-top: 1.5vw;
-    text-align: left;
-    margin-left: 2vw;
-    margin-right: auto;
-}
-
-article .signform a:hover {
-    font-weight: bold;
-}
-
-#submit:hover {
-    color: white;
-}
-
-#firstarticle {
-    margin-top: 5vw;
-}
-
-#oncearticle {
-    margin-top: 8vw;
-}
+/*
+Bouton de commencement de la page principale.
+ */
 
 #beginbutton {
     text-align: center;
@@ -218,49 +178,140 @@ article .signform a:hover {
     color: white;
 }
 
-article .title {
-    background-color: #FAF1B9;
-    height: 4vw;
-    line-height: 4vw;
+/*
+Style pour le submit des formulaires.
+ */
+
+#submit:hover {
+    color: white;
+}
+
+/*
+Style et positionnement pourles tableaux.
+ */
+
+table {
+    width: 80%;
+    margin: 2vw auto auto auto;
     text-align: center;
-    border-radius: 30px;
+}
+
+thead {
+    background-color: #FFC700;
+}
+
+tbody {
+    background-color: #FAF1B9;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
     font-family: worksans;
-    font-size: 2vw;
-    box-shadow: 0 0 15px 0.5px #808080;
+    font-weight: normal;
 }
 
-article .title img {
-    float: left;
-    width: 4vw;
+td, th {
+    padding: 5px 5px 5px 5px;
 }
 
-article ul {
+/*
+Style pour les données personnels. Alignement centre gauche.
+ */
+
+.tounderline {
+    text-decoration: underline;
+}
+
+.toalign {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.tobealigned {
+    text-align: left;
+}
+
+/*
+Style pour le solde.
+ */
+
+#money {
+    font-size: 4vw;
+    color: #FFC700;
+}
+
+/*
+Style et positionnement pour la cellule d'ajout dans les tableaux (ex: Ajouter un produit).
+ */
+
+#addcell {
+    padding: 10px 10px 10px 10px;
+}
+
+article #addcell .select2 {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+article #addcell .productselect {
+    width: 50%;
+}
+
+/*
+Idem pour le bouton d'ajout.
+ */
+
+#addbutton {
+    color: blue;
+}
+
+#addbutton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*
+Style bouton de submit des ajouts.
+ */
+
+#addsubmit {
+    border: none;
+    background-color: transparent;
     font-family: worksans;
-    padding: 2vw 10px 10px 8vw;
-    font-size: 1.2vw;
+    color: blue;
 }
 
-#pay {
-    position: relative;
-    bottom: 0.25vw;
+#addsubmit:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px) {
+/*
+Style bouton de modification. (ex: modifier, dans le tableau des produits).
+ */
+
+.editbutton {
+    border: none;
+    background-color: transparent;
+    font-family: worksans;
+    color: blue;
+}
+
+.editbutton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1280px) {
+
+    /*
+    Régles responsive de base pour les articles. Et titre et etc.
+     */
     article {
         width: 80%;
         margin-top: 7vw;
-    }
-
-    #secondnav {
-        font-size: 3vw;
-    }
-
-    #oncearticle {
-        margin-top: 15vw;
-    }
-
-    #firstarticle {
-        margin-top: 8vw;
     }
 
     article .title {
@@ -273,20 +324,14 @@ article ul {
         width: 5vw;
     }
 
-    #pay {
-        bottom: 0.3vw;
-    }
-
     article ul {
         font-size: 2vw;
         padding: 4vw 0px 0px 8vw;
     }
 
-    #beginbutton {
-        width: 40%;
-        font-size: 3vw;
-    }
-
+    /*
+    Régles pour les signform de base en responsive.
+     */
     article .signform {
         margin-top: 4vw;
     }
@@ -304,14 +349,9 @@ article ul {
         margin-bottom: 2vw;
     }
 
-    .tablecontain {
-        overflow: scroll;
-    }
-
-    table {
-        margin-top: 4vw;
-    }
-
+    /*
+    Paragraphes et liens en paragraphe, reponsive.
+     */
     p {
         font-size: 2vw;
     }
@@ -321,27 +361,65 @@ article ul {
         line-height: 10vw;
     }
 
+    /*
+    Amélioration des petits ajustements pour les images hors cadre.
+     */
+    #pay {
+        bottom: 0.3vw;
+    }
+
+    /*
+    On augmente la taille du solde !
+     */
     #money {
         font-size: 6vw;
     }
-}
 
-@media screen and (min-width: 430px) and (max-width: 699px) {
-    article {
-        width: 90%;
-        margin-top: 7vw;
+    /*
+    Pour les articles seuls ou en premier on augmente la marge.
+     */
+    #oncearticle {
+        margin-top: 15vw;
     }
 
     #firstarticle {
         margin-top: 8vw;
     }
 
-    #secondnav {
-        font-size: 4vw;
+    /*
+    Idem pour le gros bouton.
+     */
+    #beginbutton {
+        width: 40%;
+        font-size: 3vw;
     }
 
-    #oncearticle {
-        margin-top: 18vw;
+    /*
+    On améliore aussi le traitement des tableaux.
+     */
+    table {
+        margin-top: 4vw;
+    }
+
+    .tablecontain {
+        overflow: scroll;
+    }
+
+    /*
+    Augmentation de la taille des textes dans la nav spécial administrateur.
+     */
+    #secondnav {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 699px) {
+
+    /*
+    La section est organisé de la même manière que la précédente.
+     */
+    article {
+        width: 90%;
     }
 
     article .title {
@@ -354,18 +432,8 @@ article ul {
         width: 8vw;
     }
 
-    #pay {
-        bottom: 0.5vw;
-    }
-
     article ul {
         font-size: 2.9vw;
-        padding: 4vw 0px 0px 8vw;
-    }
-
-    #beginbutton {
-        font-size: 4vw;
-        width: 55%;
     }
 
     article .signform {
@@ -391,24 +459,16 @@ article ul {
         margin-bottom: 3vw;
     }
 
-    .errorpanel {
-        margin-top: 5vw;
+    #pay {
+        bottom: 0.5vw;
     }
 
-    .infopanel {
-        margin-top: 5vw;
+    #wallet {
+        bottom: 0.6vw;
     }
 
-    .yespanel {
-        margin-top: 5vw;
-    }
-
-    .tablecontain {
-        overflow: scroll;
-    }
-
-    table {
-        margin-top: 6vw;
+    #money {
+        font-size: 7vw;
     }
 
     p {
@@ -418,85 +478,19 @@ article ul {
 
     p a {
         padding: 5px;
-        line-height: 10vw;
-    }
-
-    #money {
-        font-size: 7vw;
-    }
-
-    #wallet {
-        bottom: 0.6vw;
-    }
-}
-
-@media screen and (max-width: 429px) {
-    article {
-        width: 90%;
-        margin-top: 7vw;
-    }
-
-    #firstarticle {
-        margin-top: 8vw;
-    }
-
-    #secondnav {
-        font-size: 4vw;
     }
 
     #oncearticle {
         margin-top: 18vw;
     }
 
-    article .title {
-        height: 8vw;
-        line-height: 8vw;
-        font-size: 3.5vw;
-    }
-
-    article .title img {
-        width: 8vw;
-    }
-
-    #pay {
-        bottom: 0.5vw;
-    }
-
-    article ul {
-        font-size: 3.2vw;
-        padding: 4vw 0px 0px 8vw;
-    }
-
-    #beginbutton {
-        font-size: 5vw;
-        width: 75%;
-    }
-
-    article .signform {
-        width: 90%;
-        font-size: 4vw;
+    table {
         margin-top: 6vw;
     }
 
-    article .signform input {
-        font-size: 5vw;
-        margin-top: 6vw;
-    }
-
-    article .signform a {
-        margin-top: 3vw;
-        margin-left: 2vw;
-    }
-
-    article .signform select {
-        width: 90%;
-    }
-
-    article .signform .select2 {
-        margin-top: 4vw;
-        margin-bottom: 3vw;
-    }
-
+    /*
+    Ajout de style pour les panels. On augmente les marges.
+     */
     .errorpanel {
         margin-top: 5vw;
     }
@@ -509,29 +503,53 @@ article ul {
         margin-top: 5vw;
     }
 
-    .tablecontain {
-        overflow: scroll;
+    #beginbutton {
+        font-size: 4vw;
+        width: 55%;
     }
 
-    table {
+    #secondnav {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 429px) {
+
+    /*
+    Structure similaire pour cette section de même.
+     */
+    article {
+        width: 90%;
+    }
+
+    article ul {
+        font-size: 3.2vw;
+    }
+
+    article .signform {
+        width: 90%;
+        font-size: 4vw;
+    }
+
+    article .signform input {
+        font-size: 5vw;
         margin-top: 6vw;
+    }
+
+    article .signform a {
+        margin-top: 3vw;
+    }
+
+    article .signform select {
+        width: 90%;
+    }
+
+    #beginbutton {
+        font-size: 5vw;
+        width: 75%;
     }
 
     p {
         font-size: 3.8vw;
-        margin-top: 6vw;
-    }
-
-    p a {
-        padding: 5px;
-        line-height: 10vw;
-    }
-
-    #money {
-        font-size: 7vw;
-    }
-
-    #wallet {
-        bottom: 0.6vw;
     }
 }

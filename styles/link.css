@@ -1,10 +1,18 @@
 @charset "UTF-8";
 
+/*
+Positionnement et style image centrale.
+ */
+
 #validator {
     display: block;
     width: 15vw;
     margin: 5vw auto auto auto;
 }
+
+/*
+Positionnement et style texte central.
+ */
 
 p {
     font-family: worksans;
