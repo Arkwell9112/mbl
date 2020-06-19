@@ -67,12 +67,12 @@ try {
                 foreach ($command as $key => $product) {
                     $commandstring = $commandstring . $key . " : " . $product[WeekDay::getDay()] . "<br>";
                 }
+                $command = json_encode($command);
                 echo "<td>$commandstring</td>";
                 echo "<td><form method='post' action='adminaccountaction.php'>
                         <input type='hidden' name='action' value='force'>
                         <input type='hidden' name='username' value='$username'>
                         <input type='hidden' name='amount' value='$value'>
-                        <input type='hidden' name='command' value='$command'>
                         <input type='hidden' name='index' value='$pass'>
                         <input type='submit' value='Forcer la validation'>
                       </form></td>";

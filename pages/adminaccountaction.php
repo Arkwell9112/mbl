@@ -57,16 +57,28 @@ try {
             "username" => $_POST["username"]
         ));
         $result = $request->fetchAll();
-        $command = json_decode($_POST["command"]);
-        $products = array(
-            "Montant" => number_format(-$_POST["amount"], 2) . "€"
-        );
+        // La commande passée par HTML ne fonctionne pas on va donc rechercher la véritable commande.
+        $request = $bdd->prepare("SELECT value FROM global WHERE label='optitour'");
+        $request->execute();
+        $optitour = $request->fetchAll();
+        $optitour = $optitour[0]["value"];
+        $optitour = json_decode($optitour, true);
+        $initindex = $optitour[$_POST["index"]];
+        $request = $bdd->prepare("SELECT value FROM global WHERE label='inittour'");
+        $request->execute();
+        $inittour = $request->fetchAll();
+        $inittour = $inittour[0]["value"];
+        $inittour = json_decode($inittour, true);
+        $command = $inittour[$initindex]["command"];
+        $command = json_decode($command, true);
+        $products = array();
+        $products["Montant"] = -number_format($_POST["amount"], 2) . "€";
         foreach ($command as $key => $product) {
             $products[$key] = $product[WeekDay::getDay()];
         }
         $content = array(
             "title" => "Paiement commande",
-            "content" => json_encode($products)
+            "content" => $products
         );
         // Vérification que l'utilisateur n'a pas déjà été livré (validé).
         if ($result[0]["delivered"] == 0) {

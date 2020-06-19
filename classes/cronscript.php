@@ -84,7 +84,7 @@ try {
     ));
     // Calcul l'itinéraire le plus optimisé en utilisant l'API open-street par tranche de 1000 utilisateurs. (Ou moins dans certains cas évidemment).
     $i = 0;
-    if (count($result) > 0) {
+    if (count($result) > 2) {
         $end = false;
     } else {
         $end = true;

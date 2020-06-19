@@ -159,6 +159,6 @@ if ($currentuser <= $maxcustomer) {
         </form>";
         }
         ?>
-        <a href="adminaccount.php?page=force" class="bottomlink">Liste des clients passées</a>
+        <a href="adminaccount.php?page=force" class="bottomlink">Liste des clients passés</a>
     </div>
 </article>
