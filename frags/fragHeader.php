@@ -17,8 +17,8 @@ if (!isset($toadd)) {
     <link href="../styles/main.css" rel="stylesheet">
     <link href="../styles/footer.css" rel="stylesheet">
     <script src="../scripts/jquery-3.5.1.min.js"></script>
-    <script src="../scripts/select2.min.js"></script>
     <script src="../scripts/footresp.js"></script>
+    <script src="../scripts/select2.min.js"></script>
     <?php echo $toadd ?>
     <title><?php echo $title ?></title>
 </head>

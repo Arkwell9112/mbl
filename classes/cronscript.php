@@ -57,11 +57,19 @@ try {
     $request = $bdd->prepare($request);
     $request->execute();
     $result = $request->fetchAll();
-    $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
-    $request->execute(array(
-        "value" => count($result) - 1,
-        "label" => "maxcustomer"
-    ));
+    if (count($result) > 3) {
+        $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+        $request->execute(array(
+            "value" => count($result) - 1,
+            "label" => "maxcustomer"
+        ));
+    } else {
+        $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
+        $request->execute(array(
+            "value" => -1,
+            "label" => "maxcustomer"
+        ));
+    }
     $request = $bdd->prepare("UPDATE global SET value=:value WHERE label=:label");
     $request->execute(array(
         "value" => "[]",

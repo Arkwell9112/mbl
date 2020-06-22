@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('.cityselect').select2();
-    initiation();
 });
+
+window.addEventListener("load", initiation);
 
 let current = 1;
 let rightarraow;
@@ -11,7 +12,7 @@ let aligner2;
 let aligner3;
 
 // Si le footer n'est pas en bas de page on le met en bas de page.
-// SI le footer est replacé et que l'événement de focus d'un input pour smartphone est déclenché on rend le footer invisible.
+// Si le footer est replacé et que l'événement de focus d'un input pour smartphone est déclenché on rend le footer invisible.
 // Pour éviter que le footer ne masque les inputs sur smartphone.
 function initiation() {
     rightarraow = document.getElementById("rightarrow");
