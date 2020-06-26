@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 18 juin 2020 à 08:24
+-- Généré le : ven. 26 juin 2020 à 11:54
 -- Version du serveur :  10.3.22-MariaDB-0+deb10u1
 -- Version de PHP : 7.3.14-1~deb10u1
 
@@ -78,6 +78,18 @@ CREATE TABLE `global` (
   `label` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `value` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `global`
+--
+
+INSERT INTO `global` (`label`, `value`) VALUES
+('currentcustomer', '0'),
+('id', '0'),
+('inittour', '[]'),
+('maxcustomer', '-1'),
+('optitour', '[]'),
+('passed', '[]');
 
 -- --------------------------------------------------------
 
